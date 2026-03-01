@@ -46,16 +46,6 @@ const rewardTiers = [
         iconBg: 'bg-ecell-primary/10 text-ecell-primary',
         glow: 'hover:shadow-[0_0_20px_rgba(212,255,0,0.15)]',
     },
-    {
-        refs: 30,
-        pass: 'Corporate',
-        icon: Crown,
-        note: 'Upgrades from Corporate',
-        gradient: 'from-yellow-500/10 to-yellow-500/[0.03]',
-        border: 'border-yellow-500/20',
-        iconBg: 'bg-yellow-500/10 text-yellow-500',
-        glow: 'hover:shadow-[0_0_20px_rgba(234,179,8,0.15)]',
-    },
 ];
 
 const steps = [
