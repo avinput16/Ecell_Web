@@ -6,7 +6,6 @@ import {
     Gift,
     Award,
     Trophy,
-    Crown,
     Users,
     Rocket,
     Mail,
