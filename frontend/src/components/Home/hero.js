@@ -87,13 +87,13 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 6.5, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 cursor-pointer group z-20"
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 cursor-pointer group z-20"
                 onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
             >
                 <div className="relative flex flex-col items-center">
-                    <div className="w-[1px] h-12 bg-white/10 relative overflow-hidden rounded-full">
+                    <div className="w-[2px] h-20 bg-white/10 relative overflow-hidden rounded-full">
                         <motion.div
-                            className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#BCFF2F] to-transparent shadow-[0_0_10px_#BCFF2F]"
+                            className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#BCFF2F] to-transparent shadow-[0_0_15px_#BCFF2F]"
                             animate={{
                                 y: ["100%", "-200%"]
                             }}
@@ -105,13 +105,13 @@ const Hero = () => {
                         />
                     </div>
 
-                    <div className="absolute -top-6 flex flex-col items-center">
+                    <div className="absolute -top-10 flex flex-col items-center">
                         {[0, 1].map((i) => (
                             <motion.div
                                 key={i}
                                 animate={{
                                     opacity: [0, 1, 0],
-                                    y: [10, -15],
+                                    y: [15, -25],
                                 }}
                                 transition={{
                                     duration: 2,
@@ -121,8 +121,8 @@ const Hero = () => {
                                 }}
                                 className="absolute"
                             >
-                                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 7L7 1L13 7" stroke="#BCFF2F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 12L12 2L22 12" stroke="#BCFF2F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </motion.div>
                         ))}

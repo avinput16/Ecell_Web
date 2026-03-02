@@ -19,15 +19,13 @@
    GLOBAL PERFORMANCE OPTIMIZATIONS
    ======================================== */
 
-/* Global image optimization */
-img {
-  content-visibility: auto;
-}
+/* Global image optimization removed flickering content-visibility */
+
 
 /* Optimize offscreen sections — browser can skip rendering until near viewport */
 section,
 .section-wrapper {
-  content-visibility: auto;
+  /* content-visibility: auto removed to fix potential image flickering */
   contain-intrinsic-size: auto 500px;
 }
 

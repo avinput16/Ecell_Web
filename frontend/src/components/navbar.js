@@ -21,51 +21,114 @@ const Navbar = ({ onToggleMenu, isOpen, isLaunchpad }) => {
     <nav className={`navbar-new ${isScrolled ? "scrolled" : ""} ${isOpen ? "menu-open" : ""} ${isLaunchpad ? "launchpad-mode" : ""}`}>
       <div className="navbar-container-new">
         <div className="nav-logo-box">
-          <NavLink to="/" className="navbar-logo-link">
-            <img src={logo} alt="E-CELL" className="nav-logo-img" />
+          <NavLink to={isLaunchpad ? "/launchpad" : "/"} className="navbar-logo-link">
+            <img src={isLaunchpad ? lplogo : logo} alt={isLaunchpad ? "LP" : "E-CELL"} className="nav-logo-img" />
           </NavLink>
         </div>
 
         <div className="nav-main-content">
           <div className="nav-row-top">
-            <NavLink
-              to="/program"
-              className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
-            >
-              Programs & Initiatives
-            </NavLink>
-            <NavLink
-              to={isLaunchpad ? "/launchpad/team" : "/team"}
-              className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
-            >
-              Our Team
-            </NavLink>
-            <NavLink
-              to={isLaunchpad ? "/launchpad/gallery" : "/gallery"}
-              className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
-            >
-              Gallery
-            </NavLink>
+            {isLaunchpad ? (
+              <>
+                <NavLink
+                  to="/launchpad/events"
+                  className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
+                >
+                  Events
+                </NavLink>
+                <NavLink
+                  to="/launchpad/passes"
+                  className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
+                >
+                  Passes
+                </NavLink>
+                <NavLink
+                  to="/launchpad/accommodation"
+                  className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
+                >
+                  Accoms
+                </NavLink>
+                <NavLink
+                  to="/launchpad/schedules"
+                  className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
+                >
+                  Schedule
+                </NavLink>
+              </>
+            ) : (
+              <>
+                <NavLink
+                  to="/program"
+                  className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
+                >
+                  Programs & Initiatives
+                </NavLink>
+                <NavLink
+                  to="/team"
+                  className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
+                >
+                  Our Team
+                </NavLink>
+                <NavLink
+                  to="/gallery"
+                  className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
+                >
+                  Gallery
+                </NavLink>
+              </>
+            )}
           </div>
           <div className="nav-row-bottom">
-            <div className="nav-cell-bottom border-right">
-              <NavLink
-                to="/launchpad"
-                className={({ isActive }) => `nav-link-new launchpad-link ${isActive ? "active" : ""}`}
-              >
-                <img src={lplogo} alt="LP" className="lp-icon-nav" />
-                Launchpad
-              </NavLink>
-            </div>
-            <div className="nav-cell-bottom">
-              <NavLink
-                to={isLaunchpad ? "/launchpad/contact" : "/contact"}
-                className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
-              >
-                <Phone size={14} className="nav-icon-phone" />
-                Contact Us
-              </NavLink>
-            </div>
+            {isLaunchpad ? (
+              <>
+                <div className="nav-cell-bottom border-right">
+                  <NavLink
+                    to="/launchpad/team"
+                    className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
+                  >
+                    Team
+                  </NavLink>
+                </div>
+                <div className="nav-cell-bottom border-right">
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) => `nav-link-new launchpad-link ${isActive ? "active" : ""}`}
+                  >
+                    <img src={logo} alt="E-CELL" className="lp-icon-nav scale-75" />
+                    ECell Page
+                  </NavLink>
+                </div>
+                <div className="nav-cell-bottom">
+                  <NavLink
+                    to="/launchpad/contact"
+                    className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
+                  >
+                    Contact Us
+                  </NavLink>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="nav-cell-bottom border-right">
+                  <NavLink
+                    to="/launchpad"
+                    className={({ isActive }) => `nav-link-new launchpad-link ${isActive ? "active" : ""}`}
+                  >
+                    <img src={lplogo} alt="LP" className="lp-icon-nav" />
+                    Launchpad
+                  </NavLink>
+                </div>
+                <div className="nav-cell-bottom">
+                  <NavLink
+                    to="/contact"
+                    className={({ isActive }) => `nav-link-new ${isActive ? "active" : ""}`}
+                  >
+                    <Phone size={14} className="nav-icon-phone" />
+                    Contact Us
+                  </NavLink>
+                </div>
+              </>
+            )}
           </div>
         </div>
 

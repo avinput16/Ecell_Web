@@ -29,6 +29,8 @@ const Event = lazy(() => import("./components/events/event"));
 const Sponsor = lazy(() => import("./components/sponsors/sponsor"));
 const PartnerPage = lazy(() => import("./components/sponsors/PartnerPage"));
 const MediaPage = lazy(() => import("./components/sponsors/MediaPage"));
+const WannaSponsor = lazy(() => import("./components/sponsors/WannaSponsor"));
+const SponsorshipSlabs = lazy(() => import("./components/sponsors/SponsorshipSlabs"));
 
 //const Schedules = lazy(() => import("./components/schedules"));
 const ScheduleSoon = lazy(() => import("./components/ScheduleSoon"));
@@ -141,10 +143,10 @@ function MainContent() {
     { label: 'Events', ariaLabel: 'View events', link: '/launchpad/events' },
     { label: 'Passes', ariaLabel: 'Buy passes', link: '/launchpad/passes' },
     { label: 'Accoms', ariaLabel: 'View accommodation', link: '/launchpad/accommodation' },
-    { label: 'Speakers', ariaLabel: 'Meet the speakers', link: '/launchpad/speakers' },
+    { label: 'Speakers', ariaLabel: 'View speakers', link: '/launchpad/speakers' },
     { label: 'Sponsors', ariaLabel: 'View sponsors', link: '/launchpad/sponsor' },
     { label: 'Gallery', ariaLabel: 'View gallery', link: '/launchpad/gallery' },
-    { label: 'Team', ariaLabel: 'Meet our team', link: '/launchpad/team' },
+    { label: 'Team', ariaLabel: 'Meet the team', link: '/launchpad/team' },
     { label: 'Contact', ariaLabel: 'Get in touch', link: '/launchpad/contact' },
     { label: 'E-Cell', ariaLabel: 'Go back to E-Cell website', link: '/' }
   ];
@@ -216,6 +218,8 @@ function MainContent() {
               <Route path="/launchpad/contact" element={<Lcontact />} />
               <Route path="/launchpad/events" element={<Event />} />
               <Route path="/launchpad/sponsor" element={<Sponsor />} />
+              <Route path="/launchpad/sponsor/wanna-sponsor" element={<WannaSponsor />} />
+              <Route path="/launchpad/sponsor/slabs" element={<SponsorshipSlabs />} />
               <Route path="/launchpad/partner" element={<PartnerPage />} />
               <Route path="/launchpad/media" element={<MediaPage />} />
 
