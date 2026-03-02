@@ -54,7 +54,7 @@ const eventData = {
       answer: "Most roles offer a competitive stipend, with some going up to 1.25 Lakhs INR."
     }
   ],
-  registerLink: "",
+  registerLink: "/launchpad/passes#internship-drive-pass",
   hideGallery: true
 };
 

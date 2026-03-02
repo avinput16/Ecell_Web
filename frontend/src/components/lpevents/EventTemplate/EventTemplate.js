@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 import { Phone, Calendar, MapPin, ChevronDown, MessageCircle } from 'lucide-react';
 import SEO from '../../common/SEO';
+import { Link } from 'react-router-dom';
 import './EventTemplate.css';
 
 const EventTemplate = ({ eventData }) => {
@@ -94,19 +95,34 @@ const EventTemplate = ({ eventData }) => {
                 {/* Decorative elements */}
                 <div className="relative md:absolute md:bottom-5 md:left-1/2 md:-translate-x-1/2 mt-12 md:mt-0 flex flex-col items-center gap-6 z-20">
                     {eventData.registerLink && (
-                        <motion.a
-                            href={eventData.registerLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.5 }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="bg-ecell-primary text-black font-syne font-bold text-lg md:text-xl px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-[0_0_20px_rgba(212,255,0,0.4)]"
-                        >
-                            Register Now
-                        </motion.a>
+                        eventData.registerLink.startsWith('/') ? (
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5 }}
+                            >
+                                <Link
+                                    to={eventData.registerLink}
+                                    className="bg-ecell-primary text-black font-syne font-bold text-lg md:text-xl px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-[0_0_20px_rgba(212,255,0,0.4)] inline-block no-underline"
+                                >
+                                    Register Now
+                                </Link>
+                            </motion.div>
+                        ) : (
+                            <motion.a
+                                href={eventData.registerLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5 }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="bg-ecell-primary text-black font-syne font-bold text-lg md:text-xl px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-[0_0_20px_rgba(212,255,0,0.4)] no-underline"
+                            >
+                                Register Now
+                            </motion.a>
+                        )
                     )}
 
                     <div className="hidden md:flex flex-col items-center gap-2 text-white/40">

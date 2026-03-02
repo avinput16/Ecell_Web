@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Check, X, Star, Rocket, Users, Gift, Award } from 'lucide-react';
+import { Check, X, Star, Rocket, Users, Gift, Award, Briefcase, Hotel } from 'lucide-react';
 import ChromaGrid from "./Teams/ChromaGrid";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import prathviImg from "../assets/prathvi.jpeg";
 import manishImg from "../assets/manish.jpeg";
 import SEO from "./common/SEO";
 
 
-const PassCard = ({ title, price, perks, isPopular, icon: Icon, delay, position, onGetStarted }) => {
+const PassCard = ({ title, price, perks, isPopular, icon: Icon, delay, position, onGetStarted, id }) => {
   // Determine border glow color based on position
   const getBorderGlowClass = () => {
     if (position === 'center') {
@@ -19,6 +19,7 @@ const PassCard = ({ title, price, perks, isPopular, icon: Icon, delay, position,
 
   return (
     <motion.div
+      id={id}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
@@ -77,6 +78,19 @@ const PassCard = ({ title, price, perks, isPopular, icon: Icon, delay, position,
 
 const Passes = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   const handleGetStarted = (tier) => {
     const encodedUrl = encodeURIComponent(tier.paymentUrl);
@@ -182,9 +196,17 @@ const Passes = () => {
           >
             Select the tier that best fits your journey. Whether you are an aspiring student or a budding entrepreneur, we have a pass for you.
           </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-ecell-primary font-bold mt-4 text-sm uppercase tracking-wider"
+          >
+            Disclaimer: Accommodation is not included in these passes
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {tiers.map((tier, idx) => (
             <PassCard
               key={idx}
@@ -193,150 +215,222 @@ const Passes = () => {
             />
           ))}
         </div>
+      </div>
 
-        {/* Contingent Pass + Campus Ambassador — Side by Side */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+      {/* Side-by-Side ID Pass and Accommodation */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"
+      >
+        {/* Internship Drive — Left */}
+        <div
+          id="internship-drive-pass"
+          className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-primary/20 relative overflow-hidden group flex flex-col"
         >
-          {/* Contingent Pass — Left */}
-          <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col">
-            <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
-              <Users size={120} className="text-ecell-primary" />
-            </div>
-            <div className="relative z-10 flex flex-col items-center text-center flex-1">
-              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">Contingent <span className="text-ecell-primary">Pass</span></h2>
-              <p className="text-white/60 text-sm font-manrope mb-6">
-                Coming in a group? Our Contingent Pass offers exclusive bulk benefits, discounted rates, and collective networking for college delegations.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                {["Accommodation", "Dedicated Manager", "Group Workshops", "Team Certificates"].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
-                      <Check size={14} />
-                    </div>
-                    <span className="text-white text-sm font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-auto">
-                <button
-                  onClick={() => navigate('/launchpad/contingent-passes')}
-                  className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
-                >
-                  View More <Rocket size={18} />
-                </button>
-              </div>
-            </div>
+          <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+            <Briefcase size={120} className="text-ecell-primary" />
           </div>
-
-          {/* Campus Ambassador — Right */}
-          <div
-            className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-secondary/20 relative overflow-hidden group cursor-pointer flex flex-col"
-            onClick={() => navigate('/launchpad/campus-ambassador')}
-          >
-            <div className="absolute top-0 right-0 p-6 opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700">
-              <Award size={120} className="text-ecell-secondary" />
-            </div>
-            <div className="relative z-10 flex flex-col items-center text-center flex-1">
-              <div className="w-14 h-14 rounded-2xl bg-ecell-secondary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Gift size={28} className="text-ecell-secondary" />
-              </div>
-              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
-                Campus <span className="text-ecell-primary">Ambassador</span>
-              </h2>
-              <p className="text-white/50 text-sm font-manrope mb-6">
-                Want to attend LAUNCHPAD for free? Become a Campus Ambassador — refer friends, earn free passes & exclusive rewards.
-              </p>
-              <div className="mt-auto">
-                <button
-                  onClick={(e) => { e.stopPropagation(); navigate('/launchpad/campus-ambassador'); }}
-                  className="px-8 py-3.5 rounded-xl bg-ecell-secondary text-white font-bold hover:scale-105 transition-all duration-300 font-manrope inline-flex items-center gap-2 hover:shadow-[0_0_25px_rgba(107,95,255,0.5)]"
-                >
-                  I'm Interested <Rocket size={16} />
-                </button>
+          <div className="relative z-10 flex flex-col items-center text-center flex-1">
+            <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
+              Internship <span className="text-ecell-primary">Drive</span>
+            </h2>
+            <p className="text-white/60 text-sm font-manrope mb-6">
+              Connect with 50+ startups and explore internship opportunities with founders and industry leaders.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
+                  <Check size={14} />
+                </div>
+                <span className="text-white text-sm font-medium">Internship Drive Access</span>
               </div>
             </div>
-          </div>
-        </motion.div>
-
-
-        {/* Contact Section */}
-        <div className="mt-24 text-center">
-          <h3 className="text-2xl font-syne font-bold text-white mb-8">Please feel free to contact in case of query</h3>
-          <div className="max-w-2xl mx-auto flex justify-center">
-            <ChromaGrid
-              columns={2}
-              rows={1}
-              radius={300}
-              damping={0.45}
-              fadeOut={0.6}
-              items={[
-                {
-                  name: "Prathvi Raj Chauhan",
-                  role: "+91 78271 75012",
-                  image: prathviImg,
-                  linkedin: "https://www.linkedin.com/in/prathvirajchauhan/",
-                },
-                {
-                  name: "Manish Rumale",
-                  role: "+91 98861 17965",
-                  image: manishImg,
-                  linkedin: "https://www.linkedin.com/in/manish-rumale-99b5b534a/",
-                }
-              ].map((m) => {
-                const handle = m.linkedin
-                  ? m.linkedin.split("/").filter(Boolean).pop()
-                  : m.name.replace(/\s/g, "").toLowerCase();
-
-                const role = (m.role || "").toLowerCase();
-                let gradient = "linear-gradient(135deg, rgba(107,95,255,0.2), rgba(212,255,0,0.2))";
-                let borderColor = "#6b5fff";
-
-                if (role.includes("chairman") || role.includes("president")) {
-                  gradient = "linear-gradient(135deg, rgba(212,255,0,0.28), rgba(107,95,255,0.24))";
-                  borderColor = "#d4ff00";
-                } else if (role.includes("tech") || role.includes("technical") || role.includes("design") || role.includes("videography")) {
-                  gradient = "linear-gradient(135deg, rgba(107,95,255,0.26), rgba(212,255,0,0.18))";
-                  borderColor = "#8b7fff";
-                } else if (role.includes("media") || role.includes("publicity")) {
-                  gradient = "linear-gradient(135deg, rgba(107,95,255,0.22), rgba(212,255,0,0.22))";
-                  borderColor = "#6b5fff";
-                } else if (role.includes("treasurer") || role.includes("operations") || role.includes("hospitality")) {
-                  gradient = "linear-gradient(135deg, rgba(212,255,0,0.22), rgba(107,95,255,0.18))";
-                  borderColor = "#a1ff33";
-                }
-
-                return {
-                  title: m.name,
-                  subtitle: m.role,
-                  image: m.image,
-                  handle: handle ? `@${handle.substring(0, 15)}` : undefined,
-                  url: m.linkedin,
-                  gradient,
-                  borderColor,
-                  imgStyle: (() => {
-                    const name = m.name.toLowerCase();
-                    if (name.includes("prathvi")) {
-                      return { objectPosition: "center" };
-                    }
-                    if (name.includes("manish")) {
-                      return { objectPosition: "center" };
-                    }
-                    return undefined;
-                  })()
-                };
-              })}
-            />
+            <div className="flex flex-col items-center gap-4 mt-auto">
+              <div className="text-3xl font-bold text-white">₹349</div>
+              <button
+                onClick={() => handleGetStarted({
+                  title: "Internship Drive",
+                  paymentUrl: "https://konfhub.com/widget/launchpad-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Nunito&borderRadius=10&widget_type=standard&tickets=80695&ticketId=80695%7C1"
+                })}
+                className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
+              >
+                Get Started <Rocket size={18} />
+              </button>
+            </div>
           </div>
         </div>
 
-      </div>
+        {/* Accommodation — Right */}
+        <div
+          className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col"
+        >
+          <div className="absolute top-0 right-0 p-8 opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700">
+            <Hotel size={120} className="text-ecell-secondary" />
+          </div>
+          <div className="relative z-10 flex flex-col items-center text-center flex-1">
+            <div className="w-14 h-14 rounded-2xl bg-ecell-secondary/10 flex items-center justify-center mb-4">
+              <Hotel size={28} className="text-ecell-secondary" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
+              Looking for <span className="text-ecell-primary">Accommodation?</span>
+            </h2>
+            <p className="text-white/60 text-sm font-manrope mb-8">
+              We provide comfortable and affordable stay options for outstation participants to ensure a hassle-free experience.
+            </p>
+            <div className="mt-auto">
+              <button
+                onClick={() => navigate('/launchpad/accommodation')}
+                className="px-8 py-3.5 rounded-xl bg-ecell-secondary text-white font-bold hover:scale-105 transition-all duration-300 flex items-center gap-2 hover:shadow-[0_0_25px_rgba(107,95,255,0.5)]"
+              >
+                View Stay Options <Hotel size={18} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </motion.div>
 
-    </div >
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+      >
+        {/* Contingent Pass — Left */}
+        <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col">
+          <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+            <Users size={120} className="text-ecell-primary" />
+          </div>
+          <div className="relative z-10 flex flex-col items-center text-center flex-1">
+            <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">Contingent <span className="text-ecell-primary">Pass</span></h2>
+            <p className="text-white/60 text-sm font-manrope mb-6">
+              Coming in a group? Our Contingent Pass offers exclusive bulk benefits, discounted rates, and collective networking for college delegations.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              {["Accommodation", "Dedicated Manager", "Group Workshops", "Team Certificates"].map((item) => (
+                <div key={item} className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
+                    <Check size={14} />
+                  </div>
+                  <span className="text-white text-sm font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-auto">
+              <button
+                onClick={() => navigate('/launchpad/contingent-passes')}
+                className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
+              >
+                View More <Rocket size={18} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Campus Ambassador — Right */}
+        <div
+          className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-secondary/20 relative overflow-hidden group cursor-pointer flex flex-col"
+          onClick={() => navigate('/launchpad/campus-ambassador')}
+        >
+          <div className="absolute top-0 right-0 p-6 opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700">
+            <Award size={120} className="text-ecell-secondary" />
+          </div>
+          <div className="relative z-10 flex flex-col items-center text-center flex-1">
+            <div className="w-14 h-14 rounded-2xl bg-ecell-secondary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Gift size={28} className="text-ecell-secondary" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
+              Campus <span className="text-ecell-primary">Ambassador</span>
+            </h2>
+            <p className="text-white/50 text-sm font-manrope mb-6">
+              Want to attend LAUNCHPAD for free? Become a Campus Ambassador — refer friends, earn free passes & exclusive rewards.
+            </p>
+            <div className="mt-auto">
+              <button
+                onClick={(e) => { e.stopPropagation(); navigate('/launchpad/campus-ambassador'); }}
+                className="px-8 py-3.5 rounded-xl bg-ecell-secondary text-white font-bold hover:scale-105 transition-all duration-300 font-manrope inline-flex items-center gap-2 hover:shadow-[0_0_25px_rgba(107,95,255,0.5)]"
+              >
+                I'm Interested <Rocket size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+
+      {/* Contact Section */}
+      <div className="mt-24 text-center">
+        <h3 className="text-2xl font-syne font-bold text-white mb-8">Please feel free to contact in case of query</h3>
+        <div className="max-w-2xl mx-auto flex justify-center">
+          <ChromaGrid
+            columns={2}
+            rows={1}
+            radius={300}
+            damping={0.45}
+            fadeOut={0.6}
+            items={[
+              {
+                name: "Prathvi Raj Chauhan",
+                role: "+91 78271 75012",
+                image: prathviImg,
+                linkedin: "https://www.linkedin.com/in/prathvirajchauhan/",
+              },
+              {
+                name: "Manish Rumale",
+                role: "+91 98861 17965",
+                image: manishImg,
+                linkedin: "https://www.linkedin.com/in/manish-rumale-99b5b534a/",
+              }
+            ].map((m) => {
+              const handle = m.linkedin
+                ? m.linkedin.split("/").filter(Boolean).pop()
+                : m.name.replace(/\s/g, "").toLowerCase();
+
+              const role = (m.role || "").toLowerCase();
+              let gradient = "linear-gradient(135deg, rgba(107,95,255,0.2), rgba(212,255,0,0.2))";
+              let borderColor = "#6b5fff";
+
+              if (role.includes("chairman") || role.includes("president")) {
+                gradient = "linear-gradient(135deg, rgba(212,255,0,0.28), rgba(107,95,255,0.24))";
+                borderColor = "#d4ff00";
+              } else if (role.includes("tech") || role.includes("technical") || role.includes("design") || role.includes("videography")) {
+                gradient = "linear-gradient(135deg, rgba(107,95,255,0.26), rgba(212,255,0,0.18))";
+                borderColor = "#8b7fff";
+              } else if (role.includes("media") || role.includes("publicity")) {
+                gradient = "linear-gradient(135deg, rgba(107,95,255,0.22), rgba(212,255,0,0.22))";
+                borderColor = "#6b5fff";
+              } else if (role.includes("treasurer") || role.includes("operations") || role.includes("hospitality")) {
+                gradient = "linear-gradient(135deg, rgba(212,255,0,0.22), rgba(107,95,255,0.18))";
+                borderColor = "#a1ff33";
+              }
+
+              return {
+                title: m.name,
+                subtitle: m.role,
+                image: m.image,
+                handle: handle ? `@${handle.substring(0, 15)}` : undefined,
+                url: m.linkedin,
+                gradient,
+                borderColor,
+                imgStyle: (() => {
+                  const name = m.name.toLowerCase();
+                  if (name.includes("prathvi")) {
+                    return { objectPosition: "center" };
+                  }
+                  if (name.includes("manish")) {
+                    return { objectPosition: "center" };
+                  }
+                  return undefined;
+                })()
+              };
+            })}
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 
