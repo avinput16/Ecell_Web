@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Check, X, Star, Rocket, Users, Gift, Award, Briefcase, Hotel } from 'lucide-react';
 import ChromaGrid from "./Teams/ChromaGrid";
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import prathviImg from "../assets/prathvi.jpeg";
 import manishImg from "../assets/manish.jpeg";
 import SEO from "./common/SEO";
