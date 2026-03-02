@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import { useNavigate } from 'react-router-dom';
+import SEO from "./common/SEO";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -36,6 +37,12 @@ function Contact() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-12 bg-ecell-bg text-white py-20 relative overflow-hidden">
+      <SEO
+        title="Contact Us | Launchpad 2026"
+        description="Have questions about Launchpad 2026? Reach out to the E-Cell BITS Hyderabad team for any queries regarding the startup competition."
+        keywords={['Contact Launchpad', 'E-Cell BITS Hyderabad', 'Startup Queries', 'Launchpad 2026']}
+        url="https://ecellbphc.in/launchpad/contact"
+      />
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-[-20%] left-[-20%] w-[50%] h-[50%] bg-ecell-secondary/10 blur-[150px] rounded-full"></div>

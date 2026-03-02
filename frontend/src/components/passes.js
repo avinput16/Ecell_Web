@@ -5,6 +5,7 @@ import ChromaGrid from "./Teams/ChromaGrid";
 import { useNavigate } from "react-router-dom";
 import prathviImg from "../assets/prathvi.jpeg";
 import manishImg from "../assets/manish.jpeg";
+import SEO from "./common/SEO";
 
 
 const PassCard = ({ title, price, perks, isPopular, icon: Icon, delay, position, onGetStarted }) => {
@@ -145,6 +146,12 @@ const Passes = () => {
 
   return (
     <div className="min-h-screen bg-ecell-bg py-32 px-6 relative overflow-hidden">
+      <SEO
+        title="Get Your Passes | Launchpad 2026"
+        description="Secure your spot at Launchpad 2026. Choose from Delegate, Executive, or Nexus passes to access competitions, speakers, and networking events."
+        keywords={['Launchpad Passes', 'Event Tickets', 'Startup Competition Registration', 'Entrepreneurship Event Passes']}
+        url="https://ecellbphc.in/launchpad/passes"
+      />
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
         <div className="absolute top-[-10%] right-[10%] w-[500px] h-[500px] bg-ecell-primary/30 blur-[120px] rounded-full animate-pulse" />

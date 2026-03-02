@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 import { Phone, Calendar, MapPin, ChevronDown, MessageCircle } from 'lucide-react';
+import SEO from '../../common/SEO';
 import './EventTemplate.css';
 
 const EventTemplate = ({ eventData }) => {
@@ -28,8 +29,41 @@ const EventTemplate = ({ eventData }) => {
         "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80"
     ];
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": `${title} | Launchpad 2026`,
+        "description": description,
+        "image": bannerImage,
+        "startDate": "2026-03-15T09:00:00+05:30",
+        "location": {
+            "@type": "Place",
+            "name": "BITS Pilani Hyderabad Campus",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Jawahar Nagar, Shameerpet",
+                "addressLocality": "Hyderabad",
+                "postalCode": "500078",
+                "addressRegion": "Telangana",
+                "addressCountry": "IN"
+            }
+        },
+        "organizer": {
+            "@type": "Organization",
+            "name": "E-Cell BITS Hyderabad",
+            "url": "https://ecellbphc.in"
+        }
+    };
+
     return (
         <div className="event-template-container overflow-hidden">
+            <SEO
+                title={title}
+                description={description.substring(0, 160)}
+                keywords={[title, 'Launchpad', 'BITS Hyderabad', 'Startup Competition', 'Entrepreneurship']}
+                image={bannerImage}
+                schemaData={jsonLd}
+            />
             {/* 1. HERO BANNER */}
             <section className="relative min-h-[70vh] md:h-[80vh] flex flex-col items-center justify-center overflow-hidden py-20">
                 <div

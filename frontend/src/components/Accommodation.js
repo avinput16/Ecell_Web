@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Rocket, Info, Hotel } from 'lucide-react';
+import SEO from './common/SEO';
 
 const BookingModal = ({ isOpen, onClose, widgetUrl }) => {
     if (!isOpen) return null;
@@ -108,6 +109,12 @@ const Accommodation = () => {
 
     return (
         <div className="min-h-screen bg-ecell-bg py-32 px-6 relative overflow-hidden">
+            <SEO
+                title="Accommodation Plans | Launchpad 2026"
+                description="Find affordable stay options for Launchpad 2026. Comfortable accommodation arrangements at BITS Pilani Hyderabad Campus for event participants."
+                keywords={['Launchpad Accommodation', 'Student Housing', 'BITS Pilani Hyderabad Stay', 'Event Participant Stay']}
+                url="https://ecellbphc.in/launchpad/accommodation"
+            />
             <BookingModal
                 isOpen={!!selectedWidget}
                 onClose={() => setSelectedWidget(null)}

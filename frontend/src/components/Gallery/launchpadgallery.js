@@ -1,5 +1,6 @@
 import React from 'react';
 import DomeGallery from './DomeGallery';
+import SEO from '../common/SEO';
 
 // Import optimized gallery images (compressed from 404MB to 7.5MB)
 import img1 from '../../assets/Gallery-optimized/1f4814c7-a5cd-4a44-96e8-4cd4956d33a1.jpg';
@@ -79,6 +80,12 @@ export default function LaunchpadGallery() {
 
     return (
         <div style={{ width: '100%', height: '100dvh', background: '#000' }}>
+            <SEO
+                title="Gallery | Launchpad 2026"
+                description="Explore the memories of Launchpad 2026. Highlights from BITS Pilani Hyderabad's flagship entrepreneurship event."
+                keywords={['Launchpad 2026', 'Gallery', 'BITS Pilani Hyderabad', 'E-Cell', 'Entrepreneurship Events']}
+                url="https://ecellbphc.in/launchpad/gallery"
+            />
             <DomeGallery images={images} grayscale={false} />
         </div>
     );

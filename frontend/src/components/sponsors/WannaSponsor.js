@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import ChromaGrid from '../Teams/ChromaGrid';
+import SEO from '../common/SEO';
 import shihab from "../../assets/por_photos/shihab.jpg";
 import akshat_kumar from "../../assets/por_photos/akshat_kumar.jpeg";
 import akshat_ajmera from "../../assets/por_photos/akshat_ajmera.jpeg";
@@ -106,6 +107,12 @@ const WannaSponsor = () => {
 
     return (
         <div className="min-h-screen bg-black text-white font-syne pt-24 md:pt-32 pb-20 overflow-x-hidden w-full flex flex-col items-center">
+            <SEO
+                title="Sponsorship Opportunities | Launchpad 2026"
+                description="Explore sponsorship slabs for Launchpad 2026. Join as a Title, Co-Title, or Platinum partner and connect with thousands of innovators and entrepreneurs."
+                keywords={['Launchpad 2026 Sponsorship', 'Event Partnership', 'E-Cell BITS Hyderabad Sponsor', 'Startup Summit Partnership']}
+                url="https://ecellbphc.in/launchpad/sponsor/wanna-sponsor"
+            />
             {/* Header - Centered globally */}
             <div className="w-full flex flex-col items-center text-center px-6 mb-32">
                 <motion.div
