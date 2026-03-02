@@ -8,9 +8,9 @@ import akshat_ajmera from "../../assets/por_photos/akshat_ajmera.jpeg";
 
 const SponsorshipSlabs = () => {
     const sponsorshipTeam = [
-        { name: "Shihab Saiyad", role: "Chairman", image: shihab, linkedin: "https://www.linkedin.com/in/shihab-saiyad/" },
+        { name: "Shihab Saiyad", role: "Chairman", image: shihab, email: "f20230223@hyderabad.bits-pilani.ac.in", phone: "+91 9347270686", linkedin: "https://www.linkedin.com/in/shihab-saiyad/" },
         { name: "Akshat Kumar", role: "Execution Head", image: akshat_kumar, linkedin: "https://www.linkedin.com/in/akshat-kumar-a898a61a7/" },
-        { name: "Akshat Ajmera", role: "Tech Head", image: akshat_ajmera, linkedin: "https://www.linkedin.com/in/akshatajmera07/" },
+        { name: "Akshat Ajmera", role: "Tech Head", image: akshat_ajmera, email: "f20230141@hyderabad.bits-pilani.ac.in", phone: "+91 9636211800", linkedin: "https://www.linkedin.com/in/akshatajmera07/" },
     ];
 
     const slabs = [
@@ -177,6 +177,8 @@ const SponsorshipSlabs = () => {
                                         subtitle: m.role,
                                         image: m.image,
                                         url: m.linkedin,
+                                        email: m.email,
+                                        phone: m.phone,
                                         borderColor: m.role === 'Chairman' ? '#d4ff00' : '#8b7fff',
                                         gradient: m.role === 'Chairman' ? 'linear-gradient(135deg, rgba(212,255,0,0.2), rgba(107,95,255,0.2))' : 'linear-gradient(135deg, rgba(107,95,255,0.2), rgba(212,255,0,0.1))'
                                     }))}

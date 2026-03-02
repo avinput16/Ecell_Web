@@ -30,6 +30,7 @@ const teams = [
         image: shihab,
         linkedin: "https://www.linkedin.com/in/shihab-saiyad/",
         email: "f20230223@hyderabad.bits-pilani.ac.in",
+        phone: "+91 9347270686",
       },
       {
         name: "Akshay Srivastava",
@@ -37,6 +38,7 @@ const teams = [
         image: akshaye,
         linkedin: "https://www.linkedin.com/in/akshay-srivastava-389ba92b4/",
         email: "f20230810@hyderabad.bits-pilani.ac.in",
+        phone: "+91 7905668214",
       },
       {
         name: "Manas Tripathi",
@@ -44,6 +46,7 @@ const teams = [
         image: manas,
         linkedin: "https://www.linkedin.com/in/tripathi-manas/",
         email: "f20230129@hyderabad.bits-pilani.ac.in",
+        phone: "+91 8756113381",
       },
       {
         name: "Divyansh Rungta",
@@ -51,20 +54,23 @@ const teams = [
         image: raungta,
         linkedin: "https://www.linkedin.com/in/divyansh-rungta-4923752b5/",
         email: "f20230241@hyderabad.bits-pilani.ac.in",
+        phone: "+91 9182002030",
       },
       {
-        name: "Ayush Jain",
+        name: "Aayush Jain",
         role: "Treasurer",
         image: ayush,
         linkedin: "https://www.linkedin.com/in/aayush-jain-56a6a9225/",
         email: "f20230507@hyderabad.bits-pilani.ac.in",
+        phone: "+91 9098658361",
       },
       {
         name: "Darsh Saxena",
         role: "Director of Initiatives & Strategy",
         image: darsh,
         linkedin: "https://www.linkedin.com/in/darsh-saxena-2a1610201/",
-        email: " f20230508@hyderabad.bits-pilani.ac.in",
+        email: "f20230508@hyderabad.bits-pilani.ac.in",
+        phone: "+91 8619338664",
       },
       {
         name: "Akshat Ajmera",
@@ -72,13 +78,15 @@ const teams = [
         image: akshat_ajmera,
         linkedin: "https://www.linkedin.com/in/akshatajmera07/",
         email: "f20230141@hyderabad.bits-pilani.ac.in",
+        phone: "+91 9636211800",
       },
       {
-        name: "Mitesh Agarwal",
+        name: "Mitesh Agrawal",
         role: "Media Head",
         image: mitesh,
         linkedin: "https://www.linkedin.com/in/mitesh-agrawal-2a3949327/",
         email: "f20230749@hyderabad.bits-pilani.ac.in",
+        phone: "+91 8308936341",
       },
 
     ],
@@ -215,6 +223,8 @@ const ContactSection = () => {
                   image: m.image,
                   handle: handle ? `@${handle.substring(0, 15)}` : undefined,
                   url: m.linkedin,
+                  phone: m.phone,
+                  email: m.email,
                   gradient,
                   borderColor,
                   imgStyle: (() => {

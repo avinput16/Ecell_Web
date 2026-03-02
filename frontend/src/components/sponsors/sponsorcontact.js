@@ -13,6 +13,7 @@ const ContactSection = () => {
       role: "Chairman",
       image: shihab,
       email: "f20230223@hyderabad.bits-pilani.ac.in",
+      phone: "+91 9347270686",
       linkedin: "https://www.linkedin.com/in/shihab-saiyad/",
     },
     {
@@ -29,6 +30,7 @@ const ContactSection = () => {
       role: "Tech Head",
       image: akshat_ajmera,
       email: "f20230141@hyderabad.bits-pilani.ac.in",
+      phone: "+91 9636211800",
       linkedin: "https://www.linkedin.com/in/akshatajmera07/",
     },
   ];
@@ -75,6 +77,8 @@ const ContactSection = () => {
               image: m.image,
               handle: handle ? `@${handle.substring(0, 15)}` : undefined,
               url: m.linkedin,
+              phone: m.phone,
+              email: m.email,
               gradient,
               borderColor,
               imgStyle: { objectPosition: "center" }
