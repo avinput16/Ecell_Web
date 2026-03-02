@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Mail } from 'lucide-react';
+import { Check } from 'lucide-react';
 import ChromaGrid from '../Teams/ChromaGrid';
 import shihab from "../../assets/por_photos/shihab.jpg";
 import akshat_kumar from "../../assets/por_photos/akshat_kumar.jpeg";
