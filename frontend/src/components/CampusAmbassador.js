@@ -6,7 +6,6 @@ import {
     Gift,
     Award,
     Trophy,
-    Crown,
     Users,
     Rocket,
     Mail,
@@ -46,16 +45,6 @@ const rewardTiers = [
         iconBg: 'bg-ecell-primary/10 text-ecell-primary',
         glow: 'hover:shadow-[0_0_20px_rgba(212,255,0,0.15)]',
     },
-    {
-        refs: 30,
-        pass: 'Corporate',
-        icon: Crown,
-        note: 'Upgrades from Nexus',
-        gradient: 'from-yellow-500/10 to-yellow-500/[0.03]',
-        border: 'border-yellow-500/20',
-        iconBg: 'bg-yellow-500/10 text-yellow-500',
-        glow: 'hover:shadow-[0_0_20px_rgba(234,179,8,0.15)]',
-    },
 ];
 
 const steps = [
@@ -72,7 +61,7 @@ const steps = [
     {
         icon: Gift,
         title: 'Unlock Rewards',
-        desc: "Hit milestones to unlock free passes. We'll notify you when you level up!",
+        desc: "Hit milestones to unlock free passes, Official Certificates of recognition, and LORs from E-Cell BPHC. We'll notify you when you level up!",
     },
 ];
 
@@ -194,7 +183,7 @@ const CampusAmbassador = () => {
                         </p>
 
                         {/* Reward Tier Cards */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
                             {rewardTiers.map((tier, idx) => (
                                 <div
                                     key={idx}
@@ -228,7 +217,7 @@ const CampusAmbassador = () => {
                         </div>
 
                         {/* 10% Discount — inline */}
-                        <div className="flex flex-col sm:flex-row items-center gap-5 p-5 md:p-6 rounded-2xl bg-ecell-primary/5 border border-ecell-primary/15">
+                        <div className="flex flex-col sm:flex-row items-center gap-5 p-5 md:p-6 rounded-2xl bg-ecell-primary/5 border border-ecell-primary/15 mb-5">
                             <div className="w-12 h-12 rounded-xl bg-ecell-primary/10 flex items-center justify-center shrink-0">
                                 <BadgePercent size={26} className="text-ecell-primary" />
                             </div>
@@ -239,6 +228,21 @@ const CampusAmbassador = () => {
                                 </h3>
                                 <p className="text-white/50 text-sm font-manrope leading-relaxed">
                                     Anyone who purchases a pass using your unique CA code gets a <strong className="text-white/80">10% discount</strong>. More value for them, more progress for you!
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Certificates — inline */}
+                        <div className="flex flex-col sm:flex-row items-center gap-5 p-5 md:p-6 rounded-2xl bg-[#6b5fff]/5 border border-[#6b5fff]/15">
+                            <div className="w-12 h-12 rounded-xl bg-[#6b5fff]/10 flex items-center justify-center shrink-0">
+                                <Award size={26} className="text-[#6b5fff]" />
+                            </div>
+                            <div className="text-center sm:text-left">
+                                <h3 className="text-lg font-syne font-bold text-white mb-1">
+                                    Official <span className="text-[#6b5fff]">Recognition</span>
+                                </h3>
+                                <p className="text-white/50 text-sm font-manrope leading-relaxed">
+                                    Receive <strong className="text-white/80">Official Certificates of recognition</strong> of your CA role and a <strong className="text-white/80">Letter of Recommendation (LOR)</strong> from E-Cell BPHC, alongside <strong className="text-white/80">custom benefits to those who rank the highest</strong>.
                                 </p>
                             </div>
                         </div>

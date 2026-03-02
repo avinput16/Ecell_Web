@@ -160,6 +160,64 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
+/* Contact Row */
+.chroma-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* Phone pill */
+.chroma-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+}
+
+.chroma-phone:hover {
+  background: rgba(212, 255, 0, 0.12);
+  border-color: rgba(212, 255, 0, 0.35);
+  color: var(--ecell-primary);
+}
+
+.chroma-phone svg {
+  flex-shrink: 0;
+}
+
+/* Icon buttons (email, linkedin) */
+.chroma-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.chroma-icon-btn:hover {
+  background: rgba(212, 255, 0, 0.12);
+  border-color: rgba(212, 255, 0, 0.35);
+  color: var(--ecell-primary);
+  transform: translateY(-1px);
+}
+
 /* Hover lifts */
 .chroma-card:hover {
   transform: translateY(-2px);

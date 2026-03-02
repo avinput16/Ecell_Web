@@ -97,6 +97,12 @@ const Accommodation = () => {
             price: "650",
             delay: 0.2,
             widgetUrl: "https://konfhub.com/widget/launchpad-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Hind&borderRadius=10&widget_type=quick&screen=1&tickets=77674&ticketId=77674%7C1"
+        },
+        {
+            title: "3 Nights Stay",
+            price: "900",
+            delay: 0.3,
+            widgetUrl: "https://konfhub.com/widget/launchpad-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=80102&ticketId=80102%7C1"
         }
     ];
 
@@ -140,7 +146,7 @@ const Accommodation = () => {
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
                     {options.map((option, idx) => (
                         <AccommodationCard
                             key={idx}

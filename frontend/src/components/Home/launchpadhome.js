@@ -11,6 +11,7 @@ import About from "./labout";
 import ProgramsSection from "./ProgramsSection";
 import SponsorshipSectionHome from "./SponsorshipSectionHome";
 import SEO from "../common/SEO";
+import CABlock from "./CABlock";
 
 function Home() {
   const jsonLd = {
@@ -57,6 +58,9 @@ function Home() {
       <GradientBackground>
         {/* Next section: Secure Your Spot (Feature) */}
         <Feature />
+
+        {/* Brand/CABlock */}
+        <CABlock />
 
         {/* Then Events (ProgramsSection) */}
         <ProgramsSection />

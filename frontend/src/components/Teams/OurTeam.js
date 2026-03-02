@@ -20,6 +20,7 @@ const teamMembers = [
     image: shihab,
     linkedin: "https://www.linkedin.com/in/shihab-saiyad/",
     email: "f20230223@hyderabad.bits-pilani.ac.in",
+    phone: "+91 9347270686",
     bio: "Visionary leader passionate about entrepreneurship",
   },
   {
@@ -28,6 +29,7 @@ const teamMembers = [
     image: akshaye,
     linkedin: "https://www.linkedin.com/in/akshay-srivastava-389ba92b4/",
     email: "f20230810@hyderabad.bits-pilani.ac.in",
+    phone: "+91 7905668214",
     bio: "Visionary leader passionate about entrepreneurship",
   },
   {
@@ -36,6 +38,7 @@ const teamMembers = [
     image: manas,
     linkedin: "https://www.linkedin.com/in/tripathi-manas/",
     email: "f20230129@hyderabad.bits-pilani.ac.in",
+    phone: "+91 8756113381",
     bio: "Technology enthusiast driving digital transformation",
   },
   {
@@ -44,14 +47,16 @@ const teamMembers = [
     image: raungta,
     linkedin: "https://www.linkedin.com/in/divyansh-rungta-4923752b5/",
     email: "f20230241@hyderabad.bits-pilani.ac.in",
+    phone: "+91 9182002030",
     bio: "Visionary leader passionate about entrepreneurship",
   },
   {
-    name: "Ayush Jain",
+    name: "Aayush Jain",
     role: "Treasurer",
     image: ayush,
     linkedin: "https://www.linkedin.com/in/aayush-jain-56a6a9225/",
     email: "f20230507@hyderabad.bits-pilani.ac.in",
+    phone: "+91 9098658361",
     bio: "Strategic thinker with a focus on innovation",
   },
   {
@@ -60,6 +65,7 @@ const teamMembers = [
     image: darsh,
     linkedin: "https://www.linkedin.com/in/darsh-saxena-2a1610201/",
     email: "f20230508@hyderabad.bits-pilani.ac.in",
+    phone: "+91 8619338664",
     bio: "Technology enthusiast driving digital transformation",
   },
   {
@@ -68,14 +74,16 @@ const teamMembers = [
     image: akshat,
     linkedin: "https://www.linkedin.com/in/akshatajmera07/",
     email: "f20230141@hyderabad.bits-pilani.ac.in",
+    phone: "+91 9636211800",
     bio: "Strategic thinker with a focus on innovation",
   },
   {
-    name: "Mitesh Agarwal",
+    name: "Mitesh Agrawal",
     role: "Media Head",
     image: mitesh,
     linkedin: "https://www.linkedin.com/in/mitesh-agrawal-2a3949327/",
     email: "f20230749@hyderabad.bits-pilani.ac.in",
+    phone: "+91 8308936341",
     bio: "Technology enthusiast driving digital transformation",
   },
 ];
@@ -235,6 +243,9 @@ const OurTeam = () => {
                 image: m.image,
                 handle: handle ? `@${handle}` : undefined,
                 url: m.linkedin,
+                phone: m.phone,
+                email: m.email,
+                linkedin: m.linkedin,
                 gradient,
                 borderColor,
                 imgStyle: (() => {
