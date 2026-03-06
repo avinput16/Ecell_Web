@@ -19,7 +19,7 @@ const LSponsorCTA = () => {
                 className="relative z-10"
             >
                 <h2 className="text-white text-4xl md:text-6xl font-bold font-syne mb-10 tracking-tighter uppercase">
-                    Wanna <span className="text-[#CBF327]">Sponsor</span> <br className="hidden md:block" /> Launchpad?
+                    Interested to <span className="text-[#CBF327]">sponsor</span> <br className="hidden md:block" /> Launchpad?
                 </h2>
 
                 <button
