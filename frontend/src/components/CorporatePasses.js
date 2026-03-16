@@ -121,7 +121,7 @@ const CorporatePasses = () => {
     const tiers = [
         {
             title: "Corporate Pass",
-            price: "2000",
+            price: "1990",
             icon: Briefcase,
             delay: 0.1,
             position: 'center',
