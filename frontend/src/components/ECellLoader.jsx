@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 
-const ECellLoader = () => {
+const ECellLoader = ({ onLoadingChange }) => {
     const location = useLocation();
     const [loading, setLoading] = useState(() => {
         const path = window.location.pathname;
@@ -14,6 +14,11 @@ const ECellLoader = () => {
         const storageKey = isECellHome ? 'ecell_loader_shown' : 'lp_loader_shown';
         return !sessionStorage.getItem(storageKey);
     });
+
+    // Notify parent whenever loading state changes
+    useEffect(() => {
+        if (onLoadingChange) onLoadingChange(loading);
+    }, [loading, onLoadingChange]);
 
     useEffect(() => {
         const path = location.pathname;

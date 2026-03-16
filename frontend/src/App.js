@@ -98,7 +98,6 @@ function App() {
       <ErrorBoundary>
         <SmoothScroll>
           <Router>
-            <ECellLoader />
             <ScrollToTop />
             <PageHead />
             <MainContent />
@@ -116,6 +115,7 @@ function MainContent() {
 
   const menuRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoaderActive, setIsLoaderActive] = useState(true);
 
   const toggleMenu = () => {
     menuRef.current?.toggle();
@@ -155,11 +155,11 @@ function MainContent() {
 
   return (
     <div className="app-container">
+      <ECellLoader onLoadingChange={setIsLoaderActive} />
       {!isLaunchpadRoute && <GlobalBackground />}
       <ScrollToTop />
-      <LaunchpadTimer />
+      {location.pathname === '/launchpad' && !isLoaderActive && <LaunchpadTimer />}
 
-      {/* Conditional Navbar */}
       <Navbar onToggleMenu={toggleMenu} isOpen={isMenuOpen} isLaunchpad={isLaunchpadRoute} />
 
       {isLaunchpadRoute ? (
