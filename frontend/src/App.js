@@ -54,6 +54,7 @@ const Accommodation = lazy(() => import("./components/Accommodation"));
 const PaymentPage = lazy(() => import("./components/PaymentPage"));
 const ContingentPasses = lazy(() => import("./components/ContingentPasses"));
 const CampusAmbassador = lazy(() => import("./components/CampusAmbassador"));
+const CorporatePasses = lazy(() => import("./components/CorporatePasses"));
 
 
 // Scroll to top on route change
@@ -243,6 +244,7 @@ function MainContent() {
               <Route path="/launchpad/accommodation" element={<Accommodation />} />
               <Route path="/launchpad/contingent-passes" element={<ContingentPasses />} />
               <Route path="/launchpad/campus-ambassador" element={<CampusAmbassador />} />
+              <Route path="/launchpad/corporate-passes" element={<CorporatePasses />} />
 
 
               {/* startup connect form route */}
