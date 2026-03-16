@@ -55,6 +55,7 @@ const PaymentPage = lazy(() => import("./components/PaymentPage"));
 const ContingentPasses = lazy(() => import("./components/ContingentPasses"));
 const CampusAmbassador = lazy(() => import("./components/CampusAmbassador"));
 const CorporatePasses = lazy(() => import("./components/CorporatePasses"));
+const LaunchpadTimer = lazy(() => import("./components/LaunchpadTimer"));
 
 
 // Scroll to top on route change
@@ -156,6 +157,7 @@ function MainContent() {
     <div className="app-container">
       {!isLaunchpadRoute && <GlobalBackground />}
       <ScrollToTop />
+      <LaunchpadTimer />
 
       {/* Conditional Navbar */}
       <Navbar onToggleMenu={toggleMenu} isOpen={isMenuOpen} isLaunchpad={isLaunchpadRoute} />
