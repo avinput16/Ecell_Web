@@ -19,7 +19,7 @@ const SponsorshipSectionHome = () => {
                 className="relative z-10"
             >
                 <h2 className="text-white text-4xl md:text-7xl font-bold font-syne mb-10 tracking-tighter uppercase leading-none">
-                    Wanna <span className="text-[#CBF327]">Sponsor</span> <br /> Launchpad?
+                    Interested to <span className="text-[#CBF327]">sponsor</span> <br /> Launchpad?
                 </h2>
 
                 <button
