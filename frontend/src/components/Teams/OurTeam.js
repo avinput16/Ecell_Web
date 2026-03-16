@@ -43,7 +43,7 @@ const teamMembers = [
   },
   {
     name: "Divyansh Rungta",
-    role: "Director of Patnerships",
+    role: "Director of Partnerships",
     image: raungta,
     linkedin: "https://www.linkedin.com/in/divyansh-rungta-4923752b5/",
     email: "f20230241@hyderabad.bits-pilani.ac.in",
@@ -326,3 +326,4 @@ const OurTeam = () => {
 };
 
 export default OurTeam;
+

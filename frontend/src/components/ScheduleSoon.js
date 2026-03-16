@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, Hourglass, ArrowLeft } from 'lucide-react';
+import { Calendar, Clock, Hourglass, ArrowLeft, Ticket } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ScheduleSoon = () => {
@@ -92,6 +92,7 @@ const ScheduleSoon = () => {
                             className="text-white/60 max-w-2xl mx-auto text-lg md:text-xl font-manrope mb-8 md:mb-12 leading-relaxed"
                         >
                             We are curating an electrifying lineup of sessions, workshops, and networking events. Get ready to mark your calendars!
+                            <br /> Till then, checkout our passes.
                         </motion.p>
 
                         <motion.div
@@ -100,7 +101,12 @@ const ScheduleSoon = () => {
                             transition={{ delay: 0.5 }}
                             className="flex flex-col sm:flex-row gap-6 mt-4"
                         >
-
+                            <Link
+                                to="/launchpad/passes"
+                                className="px-8 py-4 rounded-xl bg-gradient-to-r from-ecell-primary to-ecell-secondary text-black font-bold hover:shadow-[0_0_20px_rgba(188,255,47,0.4)] transition-all flex items-center justify-center gap-3 group"
+                            >
+                                <Ticket size={20} className="group-hover:rotate-12 transition-transform" /> Checkout our Passes
+                            </Link>
 
                             <Link
                                 to="/launchpad"
