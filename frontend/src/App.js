@@ -56,6 +56,7 @@ const ContingentPasses = lazy(() => import("./components/ContingentPasses"));
 const CampusAmbassador = lazy(() => import("./components/CampusAmbassador"));
 const CorporatePasses = lazy(() => import("./components/CorporatePasses"));
 const LaunchpadTimer = lazy(() => import("./components/LaunchpadTimer"));
+const LaunchpadLinks = lazy(() => import("./components/Launchpadlinks/LaunchpadLinks"));
 
 
 // Scroll to top on route change
@@ -141,6 +142,7 @@ function MainContent() {
   // Launchpad menu items
   const launchpadMenuItems = [
     { label: 'Home', ariaLabel: 'Go to Launchpad home', link: '/launchpad' },
+    { label: 'Links', ariaLabel: 'All Launchpad links', link: '/launchpad/links' },
     { label: 'Schedule', ariaLabel: 'View schedule', link: '/launchpad/schedules' },
     { label: 'Events', ariaLabel: 'View events', link: '/launchpad/events' },
     { label: 'Passes', ariaLabel: 'Buy passes', link: '/launchpad/passes' },
@@ -247,6 +249,7 @@ function MainContent() {
               <Route path="/launchpad/contingent-passes" element={<ContingentPasses />} />
               <Route path="/launchpad/campus-ambassador" element={<CampusAmbassador />} />
               <Route path="/launchpad/corporate-passes" element={<CorporatePasses />} />
+              <Route path="/launchpad/links" element={<LaunchpadLinks />} />
 
 
               {/* startup connect form route */}
