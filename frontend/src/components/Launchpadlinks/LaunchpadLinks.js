@@ -15,10 +15,10 @@ const PROFILE = {
 };
 
 const SOCIAL_LINKS = [
-  { icon: <FaInstagram />, href: 'https://www.instagram.com/ecell_bphc',          label: 'Instagram' },
-  { icon: <FaLinkedin />,  href: 'https://www.linkedin.com/company/e-cell-bphc/', label: 'LinkedIn'  },
-  { icon: <FaTwitter />,   href: 'https://x.com/ecell_bphc',                      label: 'X / Twitter' },
-  { icon: <FaFacebook />,  href: 'https://www.facebook.com/groups/158307448076754/', label: 'Facebook' },
+  { icon: <FaInstagram />, href: 'https://www.instagram.com/ecell_bphc', label: 'Instagram' },
+  { icon: <FaLinkedin />, href: 'https://www.linkedin.com/company/e-cell-bphc/', label: 'LinkedIn' },
+  { icon: <FaTwitter />, href: 'https://x.com/ecell_bphc', label: 'X / Twitter' },
+  { icon: <FaFacebook />, href: 'https://www.facebook.com/groups/158307448076754/', label: 'Facebook' },
 ];
 
 const LINKS = [
@@ -28,15 +28,6 @@ const LINKS = [
     subtitle: 'Limited spots — grab yours now',
     href: '/launchpad/passes',
     internal: true,
-  },
-  {
-    emoji: '📢',
-    title: "Launchpad '26 Announcements",
-    subtitle: 'WhatsApp Community • Free to join',
-    href: 'https://chat.whatsapp.com/GRGDBbVBNiV6WvTpw1g182',
-    internal: false,
-    thumbnailBg: '#25d366',
-    thumbnailIcon: '💬',
   },
   {
     emoji: '🎓',
@@ -86,6 +77,15 @@ const LINKS = [
     subtitle: 'ecellbphc.in/launchpad',
     href: '/launchpad',
     internal: true,
+  },
+  {
+    emoji: '📢',
+    title: "Launchpad '26 Announcements",
+    subtitle: 'WhatsApp Community • Free to join',
+    href: 'https://chat.whatsapp.com/GRGDBbVBNiV6WvTpw1g182',
+    internal: false,
+    thumbnailBg: '#25d366',
+    thumbnailIcon: '💬',
   },
 ];
 
