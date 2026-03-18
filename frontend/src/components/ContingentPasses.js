@@ -144,7 +144,7 @@ const ContingentPasses = () => {
                     { text: "Internship Drive Access", subtext: "Tap into internship opportunities", included: true },
                     { text: "E-Cell In-House Workshops", subtext: "Hands-on learning sessions", included: true },
                     { text: "Highlight Speaker Session Access", subtext: "Flagship Talks by Founders & Industry Leaders", included: true },
-                    { text: "Comedy Night Entry", subtext: "Live stand-up entertainment", included: true },
+
                     { text: "Networking Lunch", subtext: "Founder & peer networking", included: false },
                     { text: "Event Freebies & Swag", subtext: "Merch, goodies & partner giveaways", included: false },
                 ]
@@ -174,7 +174,7 @@ const ContingentPasses = () => {
                     { text: "Internship Drive Access", subtext: "Tap into internship opportunities", included: true },
                     { text: "E-Cell In-House Workshops", subtext: "Hands-on learning sessions", included: true },
                     { text: "Highlight Speaker Session Access", subtext: "Flagship Talks by Founders & Industry Leaders", included: true },
-                    { text: "Comedy Night Entry", subtext: "Live stand-up entertainment", included: true },
+
                     { text: "Networking Lunch", subtext: "Founder & peer networking", included: true },
                     { text: "Event Freebies & Swag", subtext: "Merch, goodies & partner giveaways", included: true },
                 ]
