@@ -299,25 +299,30 @@ const Passes = () => {
         viewport={{ once: true }}
         className="grid grid-cols-1 lg:grid-cols-2 gap-8"
       >
-        {/* Contingent Pass — Left */}
-        <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col">
+        {/* Contingent Pass — Row 2 Left */}
+        <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col items-center">
           <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
             <Users size={120} className="text-ecell-primary" />
           </div>
           <div className="relative z-10 flex flex-col items-center text-center flex-1">
-            <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">Contingent <span className="text-ecell-primary">Pass</span></h2>
-            <p className="text-white/60 text-sm font-manrope mb-6">
-              Coming in a group? Our Contingent Pass offers exclusive bulk benefits, discounted rates, and collective networking for college delegations.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {["Accommodation", "Dedicated Manager", "Group Workshops", "Team Certificates"].map((item) => (
-                <div key={item} className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
-                    <Check size={14} />
+            <div className="mb-4">
+              <Users size={28} className="text-ecell-primary opacity-20" />
+            </div>
+            <div className="flex-1 flex flex-col justify-center items-center">
+              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">Contingent <span className="text-ecell-primary">Pass</span></h2>
+              <p className="text-white/60 text-sm font-manrope mb-8 max-w-md">
+                Coming in a group? Our Contingent Pass offers exclusive bulk benefits, discounted rates, and collective networking for college delegations.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">
+                {["Accommodation", "Dedicated Manager", "Group Workshops", "Team Certificates"].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
+                      <Check size={14} />
+                    </div>
+                    <span className="text-white text-sm font-medium">{item}</span>
                   </div>
-                  <span className="text-white text-sm font-medium">{item}</span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
             <div className="mt-auto">
               <button
@@ -330,30 +335,107 @@ const Passes = () => {
           </div>
         </div>
 
-        {/* Campus Ambassador — Right */}
+        {/* Campus Ambassador — Row 2 Right */}
         <div
-          className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-secondary/20 relative overflow-hidden group cursor-pointer flex flex-col"
+          className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-secondary/20 relative overflow-hidden group cursor-pointer flex flex-col items-center"
           onClick={() => navigate('/launchpad/campus-ambassador')}
         >
           <div className="absolute top-0 right-0 p-6 opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700">
             <Award size={120} className="text-ecell-secondary" />
           </div>
           <div className="relative z-10 flex flex-col items-center text-center flex-1">
-            <div className="w-14 h-14 rounded-2xl bg-ecell-secondary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="w-14 h-14 rounded-2xl bg-ecell-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <Gift size={28} className="text-ecell-secondary" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
-              Campus <span className="text-ecell-primary">Ambassador</span>
-            </h2>
-            <p className="text-white/50 text-sm font-manrope mb-6">
-              Want to attend LAUNCHPAD for free? Become a Campus Ambassador — refer friends, earn free passes & exclusive rewards.
-            </p>
+            <div className="flex-1 flex flex-col justify-center items-center">
+              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
+                Campus <span className="text-ecell-primary">Ambassador</span>
+              </h2>
+              <p className="text-white/50 text-sm font-manrope mb-8 max-w-md">
+                Want to attend LAUNCHPAD for free? Become a Campus Ambassador — refer friends, earn free passes & exclusive rewards.
+              </p>
+            </div>
             <div className="mt-auto">
               <button
                 onClick={(e) => { e.stopPropagation(); navigate('/launchpad/campus-ambassador'); }}
                 className="px-8 py-3.5 rounded-xl bg-ecell-secondary text-white font-bold hover:scale-105 transition-all duration-300 font-manrope inline-flex items-center gap-2 hover:shadow-[0_0_25px_rgba(107,95,255,0.5)]"
               >
                 I'm Interested <Rocket size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Corporate Pass — Row 3 Left */}
+        <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col items-center">
+          <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+            <Briefcase size={120} className="text-ecell-primary" />
+          </div>
+          <div className="relative z-10 flex flex-col items-center text-center flex-1">
+            <div className="mb-4">
+              <Briefcase size={28} className="text-ecell-primary opacity-20" />
+            </div>
+            <div className="flex-1 flex flex-col justify-center items-center">
+              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">Corporate <span className="text-ecell-primary">Pass</span></h2>
+              <p className="text-white/60 text-sm font-manrope mb-8 max-w-md">
+                Attend Launchpad with your team. Get exclusive access, premium networking opportunities, and special corporate perks.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">
+                {["Premium Networking", "Highlight Sessions", "VIP Goodies", "Masterclass"].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
+                      <Check size={14} />
+                    </div>
+                    <span className="text-white text-sm font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-auto">
+              <button
+                onClick={() => navigate('/launchpad/corporate-passes')}
+                className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
+              >
+                View More <Briefcase size={18} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Hackathon Pass — Row 3 Right */}
+        <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col items-center">
+          <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+            <Rocket size={120} className="text-ecell-primary" />
+          </div>
+          <div className="relative z-10 flex flex-col items-center text-center flex-1">
+            <div className="mb-4">
+              <Rocket size={28} className="text-ecell-primary opacity-20" />
+            </div>
+            <div className="flex-1 flex flex-col justify-center items-center">
+              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">Hackathon <span className="text-ecell-primary">Pass</span></h2>
+              <p className="text-white/60 text-sm font-manrope mb-8 max-w-md">
+                Participate in the decennial journey. Build, innovate, and compete with the best minds at Launchpad 2026.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">
+                {["24-Hour Hackathon", "Mentorship", "Prize Pool", "Freebies"].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
+                      <Check size={14} />
+                    </div>
+                    <span className="text-white text-sm font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-auto">
+              <button
+                onClick={() => handleGetStarted({
+                  title: "Hackathon Pass",
+                  paymentUrl: "https://konfhub.com/widget/launchpad-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=89125&ticketId=89125%7C1"
+                })}
+                className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
+              >
+                Get Started <Rocket size={18} />
               </button>
             </div>
           </div>
