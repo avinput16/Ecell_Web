@@ -57,6 +57,8 @@ const CampusAmbassador = lazy(() => import("./components/CampusAmbassador"));
 const CorporatePasses = lazy(() => import("./components/CorporatePasses"));
 const LaunchpadTimer = lazy(() => import("./components/LaunchpadTimer"));
 const LaunchpadLinks = lazy(() => import("./components/Launchpadlinks/LaunchpadLinks"));
+const HackathonNotification = lazy(() => import("./components/HackathonNotification"));
+
 
 
 // Scroll to top on route change
@@ -161,6 +163,8 @@ function MainContent() {
       {!isLaunchpadRoute && <GlobalBackground />}
       <ScrollToTop />
       {location.pathname === '/launchpad' && !isLoaderActive && <LaunchpadTimer />}
+      {(location.pathname === '/' || location.pathname === '/launchpad') && !isLoaderActive && <HackathonNotification />}
+
 
       <Navbar onToggleMenu={toggleMenu} isOpen={isMenuOpen} isLaunchpad={isLaunchpadRoute} />
 

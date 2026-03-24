@@ -23,6 +23,13 @@ const SOCIAL_LINKS = [
 
 const LINKS = [
   {
+    emoji: '🏆',
+    title: 'Launchpad National Hackathon',
+    subtitle: 'Prize Pool of ₹3 Lakhs',
+    href: 'https://knowvationlearnings.in/checkout?eventId=261a4cfb-75cc-42fe-a72c-ff7c34b1f5d5&fId=4d0a8f7f-4da0-4685-8316-ca767ad0cec8',
+    internal: false,
+  },
+  {
     emoji: '⏳',
     title: 'Early Bird Tickets Closing Soon',
     subtitle: 'Limited spots — grab yours now',
