@@ -57,7 +57,6 @@ const CampusAmbassador = lazy(() => import("./components/CampusAmbassador"));
 const CorporatePasses = lazy(() => import("./components/CorporatePasses"));
 const LaunchpadTimer = lazy(() => import("./components/LaunchpadTimer"));
 const LaunchpadLinks = lazy(() => import("./components/Launchpadlinks/LaunchpadLinks"));
-const HackathonNotification = lazy(() => import("./components/HackathonNotification"));
 
 
 
