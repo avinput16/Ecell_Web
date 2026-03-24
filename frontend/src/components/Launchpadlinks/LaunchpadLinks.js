@@ -23,6 +23,13 @@ const SOCIAL_LINKS = [
 
 const LINKS = [
   {
+    emoji: '🌱',
+    title: 'SEED 2026',
+    subtitle: 'Summit for E-Cell Development',
+    href: '/launchpad/seed',
+    internal: true,
+  },
+  {
     emoji: '🏆',
     title: 'Launchpad National Hackathon',
     subtitle: 'Prize Pool of ₹3 Lakhs',

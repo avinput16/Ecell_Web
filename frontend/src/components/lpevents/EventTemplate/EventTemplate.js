@@ -95,18 +95,27 @@ const EventTemplate = ({ eventData }) => {
                 {/* Decorative elements */}
                 <div className="relative md:absolute md:bottom-5 md:left-1/2 md:-translate-x-1/2 mt-12 md:mt-0 flex flex-col items-center gap-6 z-20">
                     {eventData.registerLink && (
-                        eventData.registerLink.startsWith('/') ? (
+                        eventData.registerLink.startsWith('/') || eventData.registerLink.startsWith('#') ? (
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.5 }}
                             >
-                                <Link
-                                    to={eventData.registerLink}
-                                    className="bg-ecell-primary text-black font-syne font-bold text-lg md:text-xl px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-[0_0_20px_rgba(212,255,0,0.4)] inline-block no-underline"
-                                >
-                                    Register Now
-                                </Link>
+                                {eventData.registerLink.startsWith('#') ? (
+                                    <a
+                                        href={eventData.registerLink}
+                                        className="bg-ecell-primary text-black font-syne font-bold text-lg md:text-xl px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-[0_0_20px_rgba(212,255,0,0.4)] inline-block no-underline"
+                                    >
+                                        {eventData.registerButtonText || "Register Now"}
+                                    </a>
+                                ) : (
+                                    <Link
+                                        to={eventData.registerLink}
+                                        className="bg-ecell-primary text-black font-syne font-bold text-lg md:text-xl px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-[0_0_20px_rgba(212,255,0,0.4)] inline-block no-underline"
+                                    >
+                                        {eventData.registerButtonText || "Register Now"}
+                                    </Link>
+                                )}
                             </motion.div>
                         ) : (
                             <motion.a
@@ -120,7 +129,7 @@ const EventTemplate = ({ eventData }) => {
                                 whileTap={{ scale: 0.95 }}
                                 className="bg-ecell-primary text-black font-syne font-bold text-lg md:text-xl px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors duration-300 shadow-[0_0_20px_rgba(212,255,0,0.4)] no-underline"
                             >
-                                Register Now
+                                {eventData.registerButtonText || "Register Now"}
                             </motion.a>
                         )
                     )}
@@ -137,7 +146,7 @@ const EventTemplate = ({ eventData }) => {
             </section>
 
             {/* 2. DESCRIPTION SECTION */}
-            <section className="py-20 px-6 max-w-7xl mx-auto">
+            <section id="about" className="py-20 px-6 max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -187,7 +196,7 @@ const EventTemplate = ({ eventData }) => {
             </section>
 
             {/* 3. TIMELINE SECTION */}
-            <section className="py-24 bg-transparent">
+            <section id="timeline" className="py-24 bg-transparent">
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="text-center mb-20">
                         <motion.h2
@@ -250,10 +259,10 @@ const EventTemplate = ({ eventData }) => {
             </section>
 
             {/* 4. POCs SECTION */}
-            <section className="py-24 px-6 max-w-7xl mx-auto">
+            <section id="contacts" className="py-24 px-6 max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-futuristic-header text-white mb-4 uppercase">Points of <span className="text-ecell-primary">Contact</span></h2>
-                    <p className="text-white/60 font-futuristic-body">Feel free to reach out for any queries!</p>
+                    <p className="text-white/60 font-futuristic-body">{eventData.pocTagline || "Feel free to reach out for any queries!"}</p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -8,6 +8,7 @@ import img3 from '../../assets/lp_internship_drive.png';
 import img5 from '../../assets/lp_teen_tycoons.png';
 import img6 from '../../assets/lp_pitchers_pilot.png';
 import img7 from '../../assets/lp_ground_reality.png';
+import imgSEED from '../../assets/lpevents/seed.png';
 
 const EventCard = ({ event, index }) => {
   return (
@@ -66,7 +67,8 @@ const EventsPage = () => {
     { id: 5, title: "Teen Tycoons", description: "Shaping the next generation of entrepreneurs through dynamic challenges and expert mentorship.", images: [img5], registerLink: "https://unstop.com/competitions/teen-tycoons-launchpad-26-bits-1631539", exploreLink: "/launchpad/teen_tycoons" },
     { id: 6, title: "Pitcher's Pilot", description: "A dynamic platform for entrepreneurs to showcase their ventures, gain valuable feedback, and connect with investors for growth.", images: [img6], registerLink: "https://unstop.com/competitions/pitchers-pilot-launchpad-26-bits-1631551", exploreLink: "/launchpad/pitchers_pilot" },
     { id: 7, title: "Ground Reality", description: "Pitch your startup to top investors and win Rs. 2 Lakhs with mentorship and resources for growth!", images: [img7], registerLink: "https://unstop.com/competitions/ground-reality-business-plan-competition-launchpad-26-bits-1631135", exploreLink: "/launchpad/ground_reality" },
-    { id: 3, title: "Internship Drive", description: "Launch your career with the Internship Drive – connect, learn, and grow with top startups!", images: [img3], registerLink: "", exploreLink: "/launchpad/internship_drive" }
+    { id: 3, title: "Internship Drive", description: "Launch your career with the Internship Drive – connect, learn, and grow with top startups!", images: [img3], registerLink: "", exploreLink: "/launchpad/internship_drive" },
+    { id: 8, title: "SEED 2026", description: "A national initiative to bring together E-Cells from across India to share ideas and best practices in building campus startup ecosystems.", images: [imgSEED], registerLink: "", exploreLink: "/launchpad/seed" }
   ];
 
   return (

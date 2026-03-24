@@ -43,6 +43,7 @@ const Id = lazy(() => import("./components/lpevents/id/idindex"));
 // TEMPORARILY HIDDEN - Uncomment to restore
 // const Na = lazy(() => import("./components/lpevents/na/naindex"));
 const Se = lazy(() => import("./components/lpevents/startupexpo/seindex"));
+const Seed = lazy(() => import("./components/lpevents/seed/seedindex"));
 const PaymentSuccess = lazy(() => import("./components/paymentsuccess"));
 const PaymentFailed = lazy(() => import("./components/paymentfailed"));
 const PaymentCancel = lazy(() => import("./components/paymentcancel"));
@@ -239,6 +240,7 @@ function MainContent() {
               <Route path="/launchpad/teen_tycoons" element={<TT />} />
               <Route path="/launchpad/internship_drive" element={<Id />} />
               <Route path="/launchpad/startup_expo" element={<Se />} />
+              <Route path="/launchpad/seed" element={<Seed />} />
               <Route path="/launchpad/passes" element={<Passes />} />
               <Route path="/launchpad/passes-soon" element={<PassesSoon />} />
               <Route path="/launchpad/payment" element={<PaymentPage />} />
