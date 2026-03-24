@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Check, X, Star, Rocket, Users, Gift, Award, Briefcase, Hotel } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Check, X, Star, Rocket, Users, Gift, Award, Briefcase, Hotel, ChevronDown, ChevronUp } from 'lucide-react';
 import ChromaGrid from "./Teams/ChromaGrid";
 import { useNavigate, useLocation } from "react-router-dom";
 import prathviImg from "../assets/prathvi.jpeg";
@@ -79,6 +79,7 @@ const PassCard = ({ title, price, perks, isPopular, icon: Icon, delay, position,
 const Passes = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [showDelegatePerks, setShowDelegatePerks] = useState(false);
 
   useEffect(() => {
     if (location.hash) {
@@ -225,27 +226,32 @@ const Passes = () => {
         viewport={{ once: true }}
         className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"
       >
-        {/* Internship Drive — Left */}
+        {/* Internship Drive — Row 1 Left */}
         <div
           id="internship-drive-pass"
-          className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-primary/20 relative overflow-hidden group flex flex-col"
+          className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-primary/20 relative overflow-hidden group flex flex-col items-center"
         >
           <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
             <Briefcase size={120} className="text-ecell-primary" />
           </div>
           <div className="relative z-10 flex flex-col items-center text-center flex-1">
-            <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
-              Internship <span className="text-ecell-primary">Drive</span>
-            </h2>
-            <p className="text-white/60 text-sm font-manrope mb-6">
-              Connect with 50+ startups and explore internship opportunities with founders and industry leaders.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
-                  <Check size={14} />
+            <div className="mb-4">
+              <Briefcase size={28} className="text-ecell-primary opacity-20" />
+            </div>
+            <div className="flex-1 flex flex-col justify-center items-center">
+              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
+                Internship <span className="text-ecell-primary">Drive</span>
+              </h2>
+              <p className="text-white/60 text-sm font-manrope mb-6">
+                Connect with 50+ startups and explore internship opportunities with founders and industry leaders.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
+                    <Check size={14} />
+                  </div>
+                  <span className="text-white text-sm font-medium">Internship Drive Access</span>
                 </div>
-                <span className="text-white text-sm font-medium">Internship Drive Access</span>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4 mt-auto">
@@ -263,29 +269,91 @@ const Passes = () => {
           </div>
         </div>
 
-        {/* Accommodation — Right */}
-        <div
-          className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col"
-        >
-          <div className="absolute top-0 right-0 p-8 opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700">
-            <Hotel size={120} className="text-ecell-secondary" />
+        {/* Hackathon Pass — Row 1 Right */}
+        <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col items-center">
+          <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+            <Rocket size={120} className="text-ecell-primary" />
           </div>
-          <div className="relative z-10 flex flex-col items-center text-center flex-1">
-            <div className="w-14 h-14 rounded-2xl bg-ecell-secondary/10 flex items-center justify-center mb-4">
-              <Hotel size={28} className="text-ecell-secondary" />
+          <div className="relative z-10 flex flex-col flex-1 w-full items-center">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-500 bg-white/5 text-ecell-primary group-hover:bg-ecell-primary group-hover:text-black mx-auto">
+              <Rocket size={28} />
             </div>
-            <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
-              Looking for <span className="text-ecell-primary">Accommodation?</span>
-            </h2>
-            <p className="text-white/60 text-sm font-manrope mb-8">
-              We provide comfortable and affordable stay options for outstation participants to ensure a hassle-free experience.
-            </p>
-            <div className="mt-auto">
+            
+            <div className="mb-10 text-center">
+              <h2 className="text-3xl font-syne font-bold text-white mb-3">Hackathon <span className="text-ecell-primary">Pass</span></h2>
+            </div>
+
+            <div className="space-y-4 mb-4 flex-grow w-full max-w-sm">
+              <div className="flex items-start gap-3">
+                <div className="mt-1 shrink-0 text-ecell-primary">
+                  <Check size={18} />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-sm font-manrope font-bold text-ecell-primary">
+                    30hr Hackathon
+                  </span>
+                  <span className="text-xs font-manrope text-white/50 leading-relaxed">
+                    Build, innovate, and compete with the best minds
+                  </span>
+                </div>
+              </div>
+
+              {/* Dropdown for Delegate Benefits — Styled exactly like the image */}
+              <div className="mt-6 border-t border-white/10 pt-4">
+                <button
+                  onClick={() => setShowDelegatePerks(!showDelegatePerks)}
+                  className="w-full flex items-center justify-between text-white/70 hover:text-ecell-primary transition-colors text-sm font-manrope font-bold py-2 px-1"
+                >
+                  <span className="text-left font-manrope">Includes All Delegate Pass Benefits</span>
+                  {showDelegatePerks ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                </button>
+
+                <AnimatePresence>
+                  {showDelegatePerks && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-4 space-y-4 pb-2 px-1">
+                        {[
+                          { text: "Startup Expo Access", subtext: "Explore live startups & innovations" },
+                          { text: "Competition Viewing Access", subtext: "Pitchers Pilot · Ground Reality · Teen Tycoons" },
+                          { text: "Speaker Sessions Access", subtext: "Talks by founders & industry leaders" }
+                        ].map((perk, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <div className="mt-1 shrink-0 text-ecell-primary">
+                              <Check size={18} />
+                            </div>
+                            <div className="flex flex-col text-left">
+                              <span className="text-sm font-manrope font-bold text-ecell-primary">
+                                {perk.text}
+                              </span>
+                              <span className="text-xs font-manrope text-white/50 leading-relaxed">
+                                {perk.subtext}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+            
+            <div className="mt-auto flex flex-col items-center">
+              <div className="text-4xl font-bold text-white mb-6 font-manrope">₹199</div>
               <button
-                onClick={() => navigate('/launchpad/accommodation')}
-                className="px-8 py-3.5 rounded-xl bg-ecell-secondary text-white font-bold hover:scale-105 transition-all duration-300 flex items-center gap-2 hover:shadow-[0_0_25px_rgba(107,95,255,0.5)]"
+                onClick={() => handleGetStarted({
+                  title: "Hackathon Pass",
+                  paymentUrl: "https://konfhub.com/widget/launchpad-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=89125&ticketId=89125%7C1"
+                })}
+                className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
               >
-                View Stay Options <Hotel size={18} />
+                Get Started <Rocket size={18} />
               </button>
             </div>
           </div>
@@ -299,74 +367,7 @@ const Passes = () => {
         viewport={{ once: true }}
         className="grid grid-cols-1 lg:grid-cols-2 gap-8"
       >
-        {/* Contingent Pass — Row 2 Left */}
-        <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col items-center">
-          <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
-            <Users size={120} className="text-ecell-primary" />
-          </div>
-          <div className="relative z-10 flex flex-col items-center text-center flex-1">
-            <div className="mb-4">
-              <Users size={28} className="text-ecell-primary opacity-20" />
-            </div>
-            <div className="flex-1 flex flex-col justify-center items-center">
-              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">Contingent <span className="text-ecell-primary">Pass</span></h2>
-              <p className="text-white/60 text-sm font-manrope mb-8 max-w-md">
-                Coming in a group? Our Contingent Pass offers exclusive bulk benefits, discounted rates, and collective networking for college delegations.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">
-                {["Accommodation", "Dedicated Manager", "Group Workshops", "Team Certificates"].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
-                      <Check size={14} />
-                    </div>
-                    <span className="text-white text-sm font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="mt-auto">
-              <button
-                onClick={() => navigate('/launchpad/contingent-passes')}
-                className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
-              >
-                View More <Rocket size={18} />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Campus Ambassador — Row 2 Right */}
-        <div
-          className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-secondary/20 relative overflow-hidden group cursor-pointer flex flex-col items-center"
-          onClick={() => navigate('/launchpad/campus-ambassador')}
-        >
-          <div className="absolute top-0 right-0 p-6 opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700">
-            <Award size={120} className="text-ecell-secondary" />
-          </div>
-          <div className="relative z-10 flex flex-col items-center text-center flex-1">
-            <div className="w-14 h-14 rounded-2xl bg-ecell-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Gift size={28} className="text-ecell-secondary" />
-            </div>
-            <div className="flex-1 flex flex-col justify-center items-center">
-              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
-                Campus <span className="text-ecell-primary">Ambassador</span>
-              </h2>
-              <p className="text-white/50 text-sm font-manrope mb-8 max-w-md">
-                Want to attend LAUNCHPAD for free? Become a Campus Ambassador — refer friends, earn free passes & exclusive rewards.
-              </p>
-            </div>
-            <div className="mt-auto">
-              <button
-                onClick={(e) => { e.stopPropagation(); navigate('/launchpad/campus-ambassador'); }}
-                className="px-8 py-3.5 rounded-xl bg-ecell-secondary text-white font-bold hover:scale-105 transition-all duration-300 font-manrope inline-flex items-center gap-2 hover:shadow-[0_0_25px_rgba(107,95,255,0.5)]"
-              >
-                I'm Interested <Rocket size={16} />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Corporate Pass — Row 3 Left */}
+        {/* Corporate Pass — Row 2 Left */}
         <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col items-center">
           <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
             <Briefcase size={120} className="text-ecell-primary" />
@@ -402,22 +403,22 @@ const Passes = () => {
           </div>
         </div>
 
-        {/* Hackathon Pass — Row 3 Right */}
+        {/* Contingent Pass — Row 2 Right */}
         <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col items-center">
           <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
-            <Rocket size={120} className="text-ecell-primary" />
+            <Users size={120} className="text-ecell-primary" />
           </div>
           <div className="relative z-10 flex flex-col items-center text-center flex-1">
             <div className="mb-4">
-              <Rocket size={28} className="text-ecell-primary opacity-20" />
+              <Users size={28} className="text-ecell-primary opacity-20" />
             </div>
             <div className="flex-1 flex flex-col justify-center items-center">
-              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">Hackathon <span className="text-ecell-primary">Pass</span></h2>
+              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">Contingent <span className="text-ecell-primary">Pass</span></h2>
               <p className="text-white/60 text-sm font-manrope mb-8 max-w-md">
-                Participate in the decennial journey. Build, innovate, and compete with the best minds at Launchpad 2026.
+                Coming in a group? Our Contingent Pass offers exclusive bulk benefits, discounted rates, and collective networking for college delegations.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">
-                {["24-Hour Hackathon", "Mentorship", "Prize Pool", "Freebies"].map((item) => (
+                {["Accommodation", "Dedicated Manager", "Group Workshops", "Team Certificates"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
                       <Check size={14} />
@@ -429,13 +430,71 @@ const Passes = () => {
             </div>
             <div className="mt-auto">
               <button
-                onClick={() => handleGetStarted({
-                  title: "Hackathon Pass",
-                  paymentUrl: "https://konfhub.com/widget/launchpad-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=89125&ticketId=89125%7C1"
-                })}
+                onClick={() => navigate('/launchpad/contingent-passes')}
                 className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
               >
-                Get Started <Rocket size={18} />
+                View More <Rocket size={18} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Campus Ambassador — Row 3 Left */}
+        <div
+          className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-secondary/20 relative overflow-hidden group cursor-pointer flex flex-col items-center"
+          onClick={() => navigate('/launchpad/campus-ambassador')}
+        >
+          <div className="absolute top-0 right-0 p-6 opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700">
+            <Award size={120} className="text-ecell-secondary" />
+          </div>
+          <div className="relative z-10 flex flex-col items-center text-center flex-1">
+            <div className="w-14 h-14 rounded-2xl bg-ecell-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Gift size={28} className="text-ecell-secondary" />
+            </div>
+            <div className="flex-1 flex flex-col justify-center items-center">
+              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
+                Campus <span className="text-ecell-primary">Ambassador</span>
+              </h2>
+              <p className="text-white/50 text-sm font-manrope mb-8 max-w-md">
+                Want to attend LAUNCHPAD for free? Become a Campus Ambassador — refer friends, earn free passes & exclusive rewards.
+              </p>
+            </div>
+            <div className="mt-auto">
+              <button
+                onClick={(e) => { e.stopPropagation(); navigate('/launchpad/campus-ambassador'); }}
+                className="px-8 py-3.5 rounded-xl bg-ecell-secondary text-white font-bold hover:scale-105 transition-all duration-300 font-manrope inline-flex items-center gap-2 hover:shadow-[0_0_25px_rgba(107,95,255,0.5)]"
+              >
+                I'm Interested <Rocket size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Looking for Accommodation — Row 3 Right */}
+        <div
+          className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col items-center"
+        >
+          <div className="absolute top-0 right-0 p-8 opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700">
+            <Hotel size={120} className="text-ecell-secondary" />
+          </div>
+          <div className="relative z-10 flex flex-col items-center text-center flex-1">
+            <div className="w-14 h-14 rounded-2xl bg-ecell-secondary/10 flex items-center justify-center mb-6">
+              <Hotel size={28} className="text-ecell-secondary" />
+            </div>
+            <div className="flex-1 flex flex-col justify-center items-center">
+              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
+                Looking for <span className="text-ecell-primary">Accommodation?</span>
+              </h2>
+              <p className="text-white/60 text-sm font-manrope mb-8 max-w-md">
+                We provide comfortable and affordable stay options for outstation participants to ensure a hassle-free experience.
+              </p>
+            </div>
+            <div className="mt-auto">
+              <button
+                onClick={() => navigate('/launchpad/accommodation')}
+                className="px-8 py-3.5 rounded-xl bg-ecell-secondary text-white font-bold hover:scale-105 transition-all duration-300 flex items-center gap-2 hover:shadow-[0_0_25px_rgba(107,95,255,0.5)]"
+              >
+                View Stay Options <Hotel size={18} />
               </button>
             </div>
           </div>
