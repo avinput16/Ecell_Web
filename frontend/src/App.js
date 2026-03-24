@@ -162,8 +162,7 @@ function MainContent() {
       <ECellLoader onLoadingChange={setIsLoaderActive} />
       {!isLaunchpadRoute && <GlobalBackground />}
       <ScrollToTop />
-      {location.pathname === '/launchpad' && !isLoaderActive && <LaunchpadTimer />}
-      {(location.pathname === '/' || location.pathname === '/launchpad') && !isLoaderActive && <HackathonNotification />}
+      {(location.pathname === '/' || location.pathname === '/launchpad') && !isLoaderActive && <LaunchpadTimer />}
 
 
       <Navbar onToggleMenu={toggleMenu} isOpen={isMenuOpen} isLaunchpad={isLaunchpadRoute} />
