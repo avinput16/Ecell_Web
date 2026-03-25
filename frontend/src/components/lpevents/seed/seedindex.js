@@ -6,34 +6,27 @@ import Prathvi from "../../../assets/prathvi.jpeg";
 import Manish from "../../../assets/manish.jpeg";
 
 const eventData = {
-  title: "SEED 2026",
+  title: "SEED",
   tagline: "Summit for Entrepreneurial Ecosystem Development",
   bannerImage: seedImg,
-  description: `SEED is a national-level initiative designed to bring together Entrepreneurship Cells (E-Cells) from universities across India onto a common platform. Conducted as part of Launchpad ’26, the 10th edition of BITS Hyderabad’s flagship entrepreneurship summit, the event focuses on enabling meaningful exchange of ideas, experiences, and best practices in building campus startup ecosystems.
+  description: `SEED is a national-level initiative designed to bring together Entrepreneurship Cells (E-Cells) from universities across India onto a common platform. Conducted as part of Launchpad, the 10th edition of BITS Hyderabad’s flagship entrepreneurship summit, the event focuses on enabling meaningful exchange of ideas, experiences, and best practices in building campus startup ecosystems.
 
-The summit combines expert insights, peer learning, and collaborative discussions to help student-led entrepreneurship bodies strengthen their impact within their respective institutions.
-
-Objectives:
-• Facilitate structured knowledge exchange among E-Cells
-• Provide exposure to real-world startup ecosystem perspectives
-• Encourage collaboration and long-term inter-college partnerships
-• Enable discussion on practical challenges in running E-Cells
-• Promote innovative approaches to fostering entrepreneurship on campus`,
+The summit combines expert insights, peer learning, and collaborative discussions to help student-led entrepreneurship bodies strengthen their impact within their respective institutions.`,
   timeline: [
     {
       date: "Day 1",
-      event: "Foundations of Campus Entrepreneurship",
-      description: "Opening Address, Expert Panel Discussion with ecosystem leaders, and E-Cell experience sharing session."
+      event: "Foundations of Campus",
+      description: "Entrepreneurship Opening address and FIC talk with insights into BITS Hyderabad’s initiatives, followed by an expert panel and interactive E-Cell experience sharing with feedback."
     },
     {
       date: "Day 2",
       event: "Collaboration & Knowledge Exchange",
-      description: "Rotating Roundtable Discussions on Incubation, Sponsorship, Logistics, and Networking Arena Dinner with founders and investors."
+      description: "Rotating roundtable discussions on topics such as incubation, sponsorships, operations, and outreach, followed by networking with founders, investors, and industry professionals."
     },
     {
       date: "Day 3",
       event: "Application, Evaluation & Insights",
-      description: "Team Presentations of actionable ideas, Live Voting, and Closing Networking among participants."
+      description: "Team presentations of key takeaways, with live voting, comparative analysis, critical evaluation followed by informal networking with the Launchpad organising committee."
     }
   ],
   pocs: [
@@ -66,7 +59,7 @@ Objectives:
     },
     {
       question: "When is the event happening?",
-      answer: "It is conducted as part of Launchpad ’26, from 3rd to 5th April 2026."
+      answer: "It is conducted as part of Launchpad, from 3rd to 5th April."
     },
     {
         question: "Who can participate?",

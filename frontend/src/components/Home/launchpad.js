@@ -15,6 +15,7 @@ const events = [
   { name: "GROUND REALITY", link: "/launchpad/ground_reality" },
   { name: "STARTUP EXPO", link: "/launchpad/startup_expo" },
   { name: "TEEN TYCOONS", link: "/launchpad/teen_tycoons" },
+  { name: "SEED", link: "/launchpad/seed" },
 ];
 
 const carouselImages = [
