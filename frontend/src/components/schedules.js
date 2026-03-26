@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, Zap, Star } from "lucide-react";
+import { Clock, Zap, Star, MapPin } from "lucide-react";
 
 const scheduleData = [
   {
@@ -24,6 +24,12 @@ const scheduleData = [
     events: [
       { name: "Startup Expo", time: "9:00 AM - 7:00 PM" },
       { name: "GR Semi Finals", time: "12:00 PM - 6:00 PM" },
+      { 
+        name: "Panel: Capital & Conviction", 
+        time: "1:30 PM Onwards",
+        description: "Inside the VC Mindset. Panelists: Sahil Makkar (IndiaQuotient), Rajeev Suri (BlueGreen Ventures), Shyam Penumaka (Dallas Venture Capital)",
+        venue: "F103"
+      },
       { name: "Pitcher's Pilot + Plus Workshops", time: "6:00 PM - 8:00 PM" },
     ]
   },
@@ -167,6 +173,17 @@ const EventSchedule = () => {
                         <h4 className="text-2xl md:text-3xl font-bold tracking-tight text-white group-hover:text-[#d4ff00] transition-colors leading-tight">
                           {event.name}
                         </h4>
+                        {event.description && (
+                          <p className="text-xs md:text-sm text-white/40 mt-2 max-w-xl group-hover:text-white/60 transition-colors font-sans">
+                            {event.description}
+                          </p>
+                        )}
+                        {event.venue && (
+                          <div className="flex items-center gap-2 mt-3 opacity-40 group-hover:opacity-100 transition-opacity">
+                             <MapPin size={12} className="text-[#d4ff00]" />
+                             <span className="text-[10px] font-black uppercase tracking-widest text-[#d4ff00]">{event.venue}</span>
+                          </div>
+                        )}
                       </div>
 
                       <div className="flex items-center gap-4 mt-4 md:mt-0">

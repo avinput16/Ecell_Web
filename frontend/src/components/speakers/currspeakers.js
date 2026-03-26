@@ -1,46 +1,106 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Linkedin } from "lucide-react";
+
+import sahil from "../../assets/Speakers/sahil.jpeg";
+import rajeev from "../../assets/Speakers/rajiv.jpeg";
+import shyam from "../../assets/Speakers/shyam.jpeg";
+
+const speakerData = [
+  {
+    name: "Shyam Penumaka",
+    role: "Partner, Dallas Venture Capital",
+    image: shyam,
+    linkedin: "https://www.linkedin.com/in/shyampenumaka/"
+  },
+  {
+    name: "Rajeev Suri",
+    role: "Founding Partner, BlueGreen Ventures",
+    image: rajeev,
+    linkedin: "https://www.linkedin.com/in/rajeevsuri/?originalSubdomain=in"
+  },
+  {
+    name: "Sahil Makkar",
+    role: "Partner, IndiaQuotient",
+    image: sahil,
+    linkedin: "https://www.linkedin.com/in/sahil-makkar-89985516/?originalSubdomain=in"
+  }
+];
 
 const CurrentSpeakers = () => {
   return (
-    <div className="relative w-full bg-black py-12 md:py-24 overflow-hidden font-poppins">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
-        {/* Launchpad 2026 Speakers - Coming Soon */}
+    <div className="relative w-full bg-black py-12 md:py-24 overflow-hidden font-syne">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 text-white text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 md:mb-24"
+          className="mb-16 md:mb-24"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-7xl font-black text-white tracking-tighter mb-3 md:mb-4">
-            Launchpad 2026 <span className="text-[#d4ff00] drop-shadow-[0_0_20px_rgba(212,255,0,0.3)]">Speakers</span>
+          <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-4 italic uppercase">
+            Launchpad 2026 <span className="text-[#d4ff00]">Speakers.</span>
           </h2>
-          <div className="h-1 md:h-1.5 w-16 md:w-24 bg-gradient-to-r from-[#6b5fff] to-[#d4ff00] mx-auto rounded-full mb-8 md:mb-12" />
+          <div className="h-1.5 w-24 bg-[#d4ff00] mx-auto rounded-full" />
+        </motion.div>
 
-          {/* Coming Soon Box with Gradient Border */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="inline-block p-[1px] rounded-2xl md:rounded-3xl bg-gradient-to-r from-[#6b5fff]/50 via-[#d4ff00]/50 to-[#6b5fff]/50"
-          >
-            <div className="px-8 py-6 md:px-16 md:py-10 rounded-2xl md:rounded-3xl bg-black">
-              <p className="text-2xl sm:text-3xl md:text-5xl font-black text-[#6b5fff] tracking-tighter font-poppins">
-                Coming Soon
-              </p>
-              <p className="text-[#d4ff00] mt-3 md:mt-4 text-sm md:text-lg font-poppins font-bold drop-shadow-[0_0_10px_rgba(212,255,0,0.4)]">Stay tuned for exciting announcements!</p>
-            </div>
-          </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 pb-12">
+          {speakerData.map((speaker, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative"
+            >
+              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-white/10 group-hover:border-[#d4ff00]/50 transition-all duration-500 shadow-2xl">
+                <img
+                  src={speaker.image}
+                  alt={speaker.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-left translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <h3 className="text-2xl md:text-3xl font-black text-white mb-2">{speaker.name}</h3>
+                  <p className="text-[#d4ff00] font-bold text-sm uppercase tracking-widest mb-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100">{speaker.role}</p>
+
+                  <a
+                    href={speaker.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-[#0077B5] hover:border-[#0077B5] transition-all duration-300"
+                  >
+                    <Linkedin className="w-5 h-5 text-white" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+
+        </div>
+
+        {/* Releasing Soon Text */}
+        <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="mt-20 md:mt-32 border-t border-white/5 pt-12"
+        >
+            <p className="text-xl md:text-2xl font-bold text-white/20 uppercase tracking-[0.3em] italic">
+                More Speaker Lineup <span className="text-[#d4ff00]/40">Releasing Soon.</span>
+            </p>
         </motion.div>
       </div>
 
       {/* Background Decorative Element */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-ecell-primary/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#6b5fff]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-[#d4ff00]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#6b5fff]/5 rounded-full blur-[140px] pointer-events-none" />
     </div>
   );
 };
 
 export default CurrentSpeakers;
-
