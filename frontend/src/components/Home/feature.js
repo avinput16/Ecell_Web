@@ -5,7 +5,7 @@ import { ArrowDownRight } from 'lucide-react';
 const Frame4 = () => {
   const navigate = useNavigate();
   return (
-    <section className="relative w-full overflow-hidden font-syne -mt-20 py-24 pb-0">
+    <section className="relative w-full overflow-hidden font-syne py-24 pb-0">
       {/* Background Glows */}
       <div className="absolute top-0 left-1/4 w-[40%] h-[500px] bg-[#6B60FE]/10 blur-[150px] pointer-events-none rounded-full" />
       <div className="absolute top-1/2 right-1/4 w-[40%] h-[400px] bg-[#CBF327]/5 blur-[150px] pointer-events-none rounded-full" />
