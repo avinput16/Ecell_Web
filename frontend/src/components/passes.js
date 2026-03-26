@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Check, X, Star, Rocket, Users, Gift, Award, Briefcase, Hotel, ChevronDown, ChevronUp } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Check, X, Star, Rocket, Users, Gift, Award, Briefcase, Hotel } from 'lucide-react';
 import ChromaGrid from "./Teams/ChromaGrid";
 import { useNavigate, useLocation } from "react-router-dom";
 import prathviImg from "../assets/prathvi.jpeg";
@@ -79,7 +79,6 @@ const PassCard = ({ title, price, perks, isPopular, icon: Icon, delay, position,
 const Passes = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [showDelegatePerks, setShowDelegatePerks] = useState(false);
 
   useEffect(() => {
     if (location.hash) {
@@ -226,10 +225,10 @@ const Passes = () => {
         viewport={{ once: true }}
         className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"
       >
-        {/* Internship Drive — Row 1 Left */}
+        {/* Internship Drive — Full Width or Centered */}
         <div
           id="internship-drive-pass"
-          className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-primary/20 relative overflow-hidden group flex flex-col items-center"
+          className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-primary/20 relative overflow-hidden group flex flex-col items-center col-span-1 lg:col-span-2"
         >
           <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
             <Briefcase size={120} className="text-ecell-primary" />
@@ -242,7 +241,7 @@ const Passes = () => {
               <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
                 Internship <span className="text-ecell-primary">Drive</span>
               </h2>
-              <p className="text-white/60 text-sm font-manrope mb-6">
+              <p className="text-white/60 text-sm font-manrope mb-6 max-w-lg">
                 Connect with 50+ startups and explore internship opportunities with founders and industry leaders.
               </p>
               <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -255,101 +254,11 @@ const Passes = () => {
               </div>
             </div>
             <div className="flex flex-col items-center gap-4 mt-auto">
-              <div className="text-3xl font-bold text-white">₹349</div>
+              <div className="text-3xl font-bold text-white font-manrope">₹349</div>
               <button
                 onClick={() => handleGetStarted({
                   title: "Internship Drive",
                   paymentUrl: "https://konfhub.com/widget/launchpad-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Nunito&borderRadius=10&widget_type=standard&tickets=80695&ticketId=80695%7C1"
-                })}
-                className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
-              >
-                Get Started <Rocket size={18} />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Hackathon Pass — Row 1 Right */}
-        <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group flex flex-col items-center">
-          <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
-            <Rocket size={120} className="text-ecell-primary" />
-          </div>
-          <div className="relative z-10 flex flex-col flex-1 w-full items-center">
-            <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-500 bg-white/5 text-ecell-primary group-hover:bg-ecell-primary group-hover:text-black mx-auto">
-              <Rocket size={28} />
-            </div>
-            
-            <div className="mb-10 text-center">
-              <h2 className="text-3xl font-syne font-bold text-white mb-3">Hackathon <span className="text-ecell-primary">Pass</span></h2>
-            </div>
-
-            <div className="space-y-4 mb-4 flex-grow w-full max-w-sm">
-              <div className="flex items-start gap-3">
-                <div className="mt-1 shrink-0 text-ecell-primary">
-                  <Check size={18} />
-                </div>
-                <div className="flex flex-col text-left">
-                  <span className="text-sm font-manrope font-bold text-ecell-primary">
-                    30hr Hackathon
-                  </span>
-                  <span className="text-xs font-manrope text-white/50 leading-relaxed">
-                    Build, innovate, and compete with the best minds
-                  </span>
-                </div>
-              </div>
-
-              {/* Dropdown for Delegate Benefits — Styled exactly like the image */}
-              <div className="mt-6 border-t border-white/10 pt-4">
-                <button
-                  onClick={() => setShowDelegatePerks(!showDelegatePerks)}
-                  className="w-full flex items-center justify-between text-white/70 hover:text-ecell-primary transition-colors text-sm font-manrope font-bold py-2 px-1"
-                >
-                  <span className="text-left font-manrope">Includes All Delegate Pass Benefits</span>
-                  {showDelegatePerks ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                </button>
-
-                <AnimatePresence>
-                  {showDelegatePerks && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pt-4 space-y-4 pb-2 px-1">
-                        {[
-                          { text: "Startup Expo Access", subtext: "Explore live startups & innovations" },
-                          { text: "Competition Viewing Access", subtext: "Pitchers Pilot · Ground Reality · Teen Tycoons" },
-                          { text: "Speaker Sessions Access", subtext: "Talks by founders & industry leaders" }
-                        ].map((perk, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <div className="mt-1 shrink-0 text-ecell-primary">
-                              <Check size={18} />
-                            </div>
-                            <div className="flex flex-col text-left">
-                              <span className="text-sm font-manrope font-bold text-ecell-primary">
-                                {perk.text}
-                              </span>
-                              <span className="text-xs font-manrope text-white/50 leading-relaxed">
-                                {perk.subtext}
-                              </span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </div>
-            
-            <div className="mt-auto flex flex-col items-center">
-              <div className="text-4xl font-bold text-white mb-6 font-manrope">₹199</div>
-              <button
-                onClick={() => handleGetStarted({
-                  title: "Hackathon Pass",
-                  paymentUrl: "https://konfhub.com/widget/launchpad-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=89125&ticketId=89125%7C1"
                 })}
                 className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
               >
