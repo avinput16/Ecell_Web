@@ -1,12 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 
 import sahil from "../../assets/Speakers/sahil.jpeg";
 import rajeev from "../../assets/Speakers/rajiv.jpeg";
 import shyam from "../../assets/Speakers/shyam.jpeg";
+import sejal from "../../assets/Speakers/sejal.jpeg";
 
 const speakerData = [
+  {
+    name: "Sejal Kumar",
+    role: "Digital Creator & Actress",
+    image: sejal,
+    instagram: "https://www.instagram.com/sejalkumar1195?igsh=bGRnMWNhd3hmaDVl"
+  },
   {
     name: "Shyam Penumaka",
     role: "Partner, Dallas Venture Capital",
@@ -69,12 +76,19 @@ const CurrentSpeakers = () => {
                   <p className="text-[#d4ff00] font-bold text-sm uppercase tracking-widest mb-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100">{speaker.role}</p>
 
                   <a
-                    href={speaker.linkedin}
+                    href={speaker.linkedin || speaker.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-[#0077B5] hover:border-[#0077B5] transition-all duration-300"
+                    className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 transition-all duration-300 ${speaker.instagram
+                        ? "hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7]"
+                        : "hover:bg-[#0077B5] hover:border-[#0077B5]"
+                      }`}
                   >
-                    <Linkedin className="w-5 h-5 text-white" />
+                    {speaker.instagram ? (
+                      <Instagram className="w-5 h-5 text-white" />
+                    ) : (
+                      <Linkedin className="w-5 h-5 text-white" />
+                    )}
                   </a>
                 </div>
               </div>
@@ -85,14 +99,14 @@ const CurrentSpeakers = () => {
 
         {/* Releasing Soon Text */}
         <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-20 md:mt-32 border-t border-white/5 pt-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="mt-20 md:mt-32 border-t border-white/5 pt-12"
         >
-            <p className="text-xl md:text-2xl font-bold text-white/20 uppercase tracking-[0.3em] italic">
-                More Speaker Lineup <span className="text-[#d4ff00]/40">Releasing Soon.</span>
-            </p>
+          <p className="text-xl md:text-2xl font-bold text-white/20 uppercase tracking-[0.3em] italic">
+            More Speaker Lineup <span className="text-[#d4ff00]/40">Releasing Soon.</span>
+          </p>
         </motion.div>
       </div>
 
