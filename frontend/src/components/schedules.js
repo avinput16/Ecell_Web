@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, Calendar, ChevronRight, Zap, Target, Star } from "lucide-react";
+import { Clock, Zap, Star } from "lucide-react";
 
 const scheduleData = [
   {
@@ -40,7 +40,6 @@ const scheduleData = [
       { name: "Teen Tycoons Sr.", time: "1:00 PM - 6:00 PM" },
       { name: "Teen Tycoons Jr.", time: "9:00 AM - 3:00 PM" },
       { name: "Teen Tycoons Sr. Closing Ceremony", time: "5:00 PM - 7:00 PM" },
-      { name: "Pitcher's Pilot", time: "5:00 PM - 8:00 PM" },
       { name: "Internship Drive", time: "1:00 PM - 6:00 PM" },
     ]
   }

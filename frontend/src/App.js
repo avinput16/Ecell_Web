@@ -33,7 +33,6 @@ const WannaSponsor = lazy(() => import("./components/sponsors/WannaSponsor"));
 const SponsorshipSlabs = lazy(() => import("./components/sponsors/SponsorshipSlabs"));
 
 const Schedules = lazy(() => import("./components/schedules"));
-const ScheduleSoon = lazy(() => import("./components/ScheduleSoon"));
 const Speakers = lazy(() => import("./components/speakers/launchpadspeakers"));
 
 const Gr = lazy(() => import("./components/lpevents/gr/grindex"));
