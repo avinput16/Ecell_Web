@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Check, X, Star, Rocket, Users, Gift, Award, Briefcase, Hotel } from 'lucide-react';
 import ChromaGrid from "./Teams/ChromaGrid";
