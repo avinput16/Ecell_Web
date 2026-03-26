@@ -240,6 +240,25 @@ body {
   will-change: opacity;
 }
 
+/* Custom Float Animations */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(40px, 40px); }
+}
+
+@keyframes float-slow-reverse {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-40px, -40px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 20s infinite ease-in-out;
+}
+
+.animate-float-slow-reverse {
+  animation: float-slow-reverse 25s infinite ease-in-out;
+}
+
 /* Starry background */
 .stars {
   width: 100%;

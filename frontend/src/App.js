@@ -209,7 +209,7 @@ function MainContent() {
 
       <AnimatePresence mode="wait">
         <Suspense fallback={<ECellLoader />}>
-          <div className={`main-content ${location.pathname === "/" ? "no-padding" : ""}`}>
+          <div className={`main-content ${location.pathname === "/" || location.pathname === "/launchpad" ? "no-padding" : ""}`}>
             <Routes location={location} key={location.pathname}>
               {/* Normal Routes */}
               <Route path="/" element={<Home />} />

@@ -6,7 +6,7 @@ import Past from "./past";
 import Feature from "./feature";
 import Partners from "./partner";
 import Media from "./mediapartners";
-import Dare from "./dare";
+
 import About from "./labout";
 import ProgramsSection from "./ProgramsSection";
 import SponsorshipSectionHome from "./SponsorshipSectionHome";
@@ -74,7 +74,7 @@ function Home() {
 
         {/* Other sections */}
         <About />
-        <Dare />
+
         <Past />
 
         <div className="relative">
