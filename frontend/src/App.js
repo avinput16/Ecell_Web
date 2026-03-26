@@ -32,7 +32,7 @@ const MediaPage = lazy(() => import("./components/sponsors/MediaPage"));
 const WannaSponsor = lazy(() => import("./components/sponsors/WannaSponsor"));
 const SponsorshipSlabs = lazy(() => import("./components/sponsors/SponsorshipSlabs"));
 
-//const Schedules = lazy(() => import("./components/schedules"));
+const Schedules = lazy(() => import("./components/schedules"));
 const ScheduleSoon = lazy(() => import("./components/ScheduleSoon"));
 const Speakers = lazy(() => import("./components/speakers/launchpadspeakers"));
 
@@ -233,7 +233,7 @@ function MainContent() {
 
               <Route path="/launchpad/speakers" element={<Speakers />} />
 
-              <Route path="/launchpad/schedules" element={<ScheduleSoon />} />
+              <Route path="/launchpad/schedules" element={<Schedules />} />
               <Route path="/launchpad/team" element={<Lteam />} />
               <Route path="/launchpad/ground_reality" element={<Gr />} />
               <Route path="/launchpad/pitchers_pilot" element={<Pitchp />} />
