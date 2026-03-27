@@ -11,8 +11,10 @@ const scheduleData = [
     tagline: "The Grand Launch",
     accent: "#d4ff00",
     events: [
-      { name: "Startup Expo", time: "9:00 AM - 8:00 PM" },
-      { name: "T3 Juniors", time: "9:00 AM - 8:00 PM" },
+      { name: "DP World Hackathon", time: "8:00 AM - 11:00 PM" },
+      { name: "Startup Expo", time: "8:00 AM - 7:00 PM", venue: "Library Lawns" },
+      { name: "T3 Juniors", time: "12:00 PM - 3:00 PM", venue: "Audi Foyer" },
+      { name: "Tech Gyan Workshop", time: "12:00 PM - 6:00 PM" },
     ]
   },
   {
@@ -22,15 +24,15 @@ const scheduleData = [
     tagline: "Pitch Perfect",
     accent: "#6b5fff",
     events: [
-      { name: "Startup Expo", time: "9:00 AM - 7:00 PM" },
+      { name: "DP World Hackathon", time: "8:00 AM - 11:00 PM" },
+      { name: "Impactus", time: "10:00 AM - 6:00 PM" },
+      { name: "PM Workshop", time: "11:00 AM - 3:00 PM" },
+      { name: "Startup Expo", time: "8:00 AM - 7:00 PM", venue: "Library Lawns" },
+      { name: "Tech Gyan Workshop", time: "12:00 PM - 6:00 PM" },
       { name: "GR Semi Finals", time: "12:00 PM - 6:00 PM" },
-      { 
-        name: "Panel: Capital & Conviction", 
-        time: "1:30 PM Onwards",
-        description: "Inside the VC Mindset. Panelists: Sahil Makkar (IndiaQuotient), Rajeev Suri (BlueGreen Ventures), Shyam Penumaka (Dallas Venture Capital)",
-        venue: "F103"
-      },
-      { name: "Pitcher's Pilot + Plus Workshops", time: "6:00 PM - 8:00 PM" },
+      { name: "LLM Workshop", time: "4:00 PM - 6:00 PM" },
+      { name: "Networking Dinner", time: "6:00 PM - 7:00 PM" },
+      { name: "Pitchers Pilot", time: "6:00 PM - 8:00 PM", venue: "Library Lawns Stage" },
     ]
   },
   {
@@ -40,13 +42,14 @@ const scheduleData = [
     tagline: "Moment Of Glory",
     accent: "#d4ff00",
     events: [
-      { name: "Startup Expo", time: "9:00 AM - 8:00 PM" },
-      { name: "GR Finals", time: "9:00 AM - 8:00 PM" },
-      { name: "Teen Tycoons Sr. Opening Ceremony", time: "9:00 AM - 12:00 PM" },
-      { name: "Teen Tycoons Sr.", time: "1:00 PM - 6:00 PM" },
-      { name: "Teen Tycoons Jr.", time: "9:00 AM - 3:00 PM" },
-      { name: "Teen Tycoons Sr. Closing Ceremony", time: "5:00 PM - 7:00 PM" },
-      { name: "Internship Drive", time: "1:00 PM - 6:00 PM" },
+      { name: "Startup Expo", time: "8:00 AM - 7:00 PM", venue: "Library Lawns" },
+      { name: "GR Finals", time: "8:00 AM - 5:00 PM" },
+      { name: "Tech Gyan Workshop", time: "12:00 PM - 6:00 PM" },
+      { name: "Teen Tycoons Sr.", time: "12:00 PM - 6:00 PM" },
+      { name: "Corporate Networking Lunch", time: "12:00 PM - 3:00 PM", venue: "Audi Premises" },
+      { name: "DP World Finale", time: "12:00 PM - 5:00 PM" },
+      { name: "Design Workshop", time: "TBA" },
+      { name: "Defense Workshop", time: "TBA" },
     ]
   }
 ];
@@ -180,8 +183,8 @@ const EventSchedule = () => {
                         )}
                         {event.venue && (
                           <div className="flex items-center gap-2 mt-3 opacity-40 group-hover:opacity-100 transition-opacity">
-                             <MapPin size={12} className="text-[#d4ff00]" />
-                             <span className="text-[10px] font-black uppercase tracking-widest text-[#d4ff00]">{event.venue}</span>
+                            <MapPin size={12} className="text-[#d4ff00]" />
+                            <span className="text-[10px] font-black uppercase tracking-widest text-[#d4ff00]">{event.venue}</span>
                           </div>
                         )}
                       </div>
