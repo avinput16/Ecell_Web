@@ -206,6 +206,57 @@ const Passes = () => {
           </motion.p>
         </div>
 
+        {/* Internship Drive — Moved to Top */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-12"
+        >
+          <div
+            id="internship-drive-pass"
+            className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-primary/20 relative overflow-hidden group flex flex-col items-center"
+          >
+            <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+              <Briefcase size={120} className="text-ecell-primary" />
+            </div>
+            <div className="relative z-10 flex flex-col items-center text-center flex-1">
+              <div className="mb-4">
+                <Briefcase size={28} className="text-ecell-primary opacity-20" />
+              </div>
+              <div className="flex-1 flex flex-col justify-center items-center">
+                <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
+                  Internship <span className="text-ecell-primary">Drive</span>
+                </h2>
+                <p className="text-white/60 text-sm font-manrope mb-6 max-w-lg">
+                  Connect with 50+ startups and explore internship opportunities with founders and industry leaders.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                  <div className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
+                      <Check size={14} />
+                    </div>
+                    <span className="text-white text-sm font-medium">Internship Drive Access</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-4 mt-auto">
+                <div className="text-3xl font-bold text-white font-manrope">₹349</div>
+                <button
+                  onClick={() => handleGetStarted({
+                    title: "Internship Drive",
+                    paymentUrl: "https://konfhub.com/widget/launchpad-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Nunito&borderRadius=10&widget_type=standard&tickets=80695&ticketId=80695%7C1"
+                  })}
+                  className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
+                >
+                  Get Started <Rocket size={18} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {tiers.map((tier, idx) => (
             <PassCard
@@ -217,57 +268,7 @@ const Passes = () => {
         </div>
       </div>
 
-      {/* Side-by-Side ID Pass and Accommodation */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"
-      >
-        {/* Internship Drive — Full Width or Centered */}
-        <div
-          id="internship-drive-pass"
-          className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-primary/20 relative overflow-hidden group flex flex-col items-center col-span-1 lg:col-span-2"
-        >
-          <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
-            <Briefcase size={120} className="text-ecell-primary" />
-          </div>
-          <div className="relative z-10 flex flex-col items-center text-center flex-1">
-            <div className="mb-4">
-              <Briefcase size={28} className="text-ecell-primary opacity-20" />
-            </div>
-            <div className="flex-1 flex flex-col justify-center items-center">
-              <h2 className="text-2xl md:text-3xl font-syne font-bold text-white mb-3">
-                Internship <span className="text-ecell-primary">Drive</span>
-              </h2>
-              <p className="text-white/60 text-sm font-manrope mb-6 max-w-lg">
-                Connect with 50+ startups and explore internship opportunities with founders and industry leaders.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
-                    <Check size={14} />
-                  </div>
-                  <span className="text-white text-sm font-medium">Internship Drive Access</span>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-4 mt-auto">
-              <div className="text-3xl font-bold text-white font-manrope">₹349</div>
-              <button
-                onClick={() => handleGetStarted({
-                  title: "Internship Drive",
-                  paymentUrl: "https://konfhub.com/widget/launchpad-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Nunito&borderRadius=10&widget_type=standard&tickets=80695&ticketId=80695%7C1"
-                })}
-                className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
-              >
-                Get Started <Rocket size={18} />
-              </button>
-            </div>
-          </div>
-        </div>
-      </motion.div>
+
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
