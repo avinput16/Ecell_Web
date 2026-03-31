@@ -22,7 +22,6 @@ const SOCIAL_LINKS = [
 ];
 
 const LINKS = [
-
   {
     emoji: '⏳',
     title: 'Early Bird Tickets Closing Soon',

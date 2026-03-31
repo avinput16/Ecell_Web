@@ -14,7 +14,6 @@ import SEO from "../common/SEO";
 import CABlock from "./CABlock";
 import HackathonSection from "./HackathonSection";
 
-
 function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -66,8 +65,6 @@ function Home() {
 
         {/* Hackathon Section */}
         <HackathonSection />
-
-
 
         {/* Then Events (ProgramsSection) */}
         <ProgramsSection />

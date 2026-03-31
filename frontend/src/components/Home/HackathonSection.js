@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, ExternalLink } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 
 const HackathonSection = () => {
-    const registrationLink = "https://knowvationlearnings.in/checkout?eventId=261a4cfb-75cc-42fe-a72c-ff7c34b1f5d5&fId=4d0a8f7f-4da0-4685-8316-ca767ad0cec8";
 
     return (
         <section className="hs-section">
@@ -41,8 +40,8 @@ const HackathonSection = () => {
                             </motion.div>
 
                             <h2 className="hs-title">
-                                DP World<br />
-                                <span className="hs-title-accent">National Hackathon</span>
+                                DP World National<br />
+                                <span className="hs-title-accent">Hackathon</span>
                             </h2>
 
                             <p className="hs-desc">
@@ -51,21 +50,12 @@ const HackathonSection = () => {
                             </p>
 
                             <motion.div
-                                className="hs-cta hs-cta--closed"
+                                className="hs-cta opacity-60 cursor-not-allowed"
                                 initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                whileInView={{ opacity: 0.6, y: 0 }}
                                 transition={{ delay: 0.35, duration: 0.45 }}
-                                style={{ 
-                                    background: 'rgba(255,255,255,0.03)',
-                                    color: 'rgba(255,255,255,0.25)',
-                                    border: '1px solid rgba(255,255,255,0.1)',
-                                    cursor: 'default',
-                                    pointerEvents: 'none',
-                                    boxShadow: 'none',
-                                    filter: 'grayscale(1)'
-                                }}
                             >
-                                <span style={{ opacity: 0.6 }}>Registration Closed</span>
+                                Registration Closed
                             </motion.div>
                         </div>
 
