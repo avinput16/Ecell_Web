@@ -12,7 +12,7 @@ import ProgramsSection from "./ProgramsSection";
 import SponsorshipSectionHome from "./SponsorshipSectionHome";
 import SEO from "../common/SEO";
 import CABlock from "./CABlock";
-import HackathonSection from "./HackathonSection";
+
 
 function Home() {
   const jsonLd = {
@@ -63,8 +63,7 @@ function Home() {
         {/* Brand/CABlock */}
         <CABlock />
 
-        {/* Hackathon Section */}
-        <HackathonSection />
+
 
         {/* Then Events (ProgramsSection) */}
         <ProgramsSection />
