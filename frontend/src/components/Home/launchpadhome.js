@@ -12,6 +12,7 @@ import ProgramsSection from "./ProgramsSection";
 import SponsorshipSectionHome from "./SponsorshipSectionHome";
 import SEO from "../common/SEO";
 import CABlock from "./CABlock";
+import HackathonSection from "./HackathonSection";
 
 
 function Home() {
@@ -62,6 +63,9 @@ function Home() {
 
         {/* Brand/CABlock */}
         <CABlock />
+
+        {/* Hackathon Section */}
+        <HackathonSection />
 
 
 

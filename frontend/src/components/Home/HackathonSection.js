@@ -41,8 +41,8 @@ const HackathonSection = () => {
                             </motion.div>
 
                             <h2 className="hs-title">
-                                Launchpad<br />
-                                <span className="hs-title-accent">Hackathon</span>
+                                DP World<br />
+                                <span className="hs-title-accent">National Hackathon</span>
                             </h2>
 
                             <p className="hs-desc">
@@ -50,20 +50,23 @@ const HackathonSection = () => {
                                 Build groundbreaking solutions and compete with top talent nationwide.
                             </p>
 
-                            <motion.a
-                                href={registrationLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hs-cta"
+                            <motion.div
+                                className="hs-cta hs-cta--closed"
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.35, duration: 0.45 }}
-                                whileHover={{ scale: 1.04 }}
-                                whileTap={{ scale: 0.97 }}
+                                style={{ 
+                                    background: 'rgba(255,255,255,0.03)',
+                                    color: 'rgba(255,255,255,0.25)',
+                                    border: '1px solid rgba(255,255,255,0.1)',
+                                    cursor: 'default',
+                                    pointerEvents: 'none',
+                                    boxShadow: 'none',
+                                    filter: 'grayscale(1)'
+                                }}
                             >
-                                Register Now
-                                <ExternalLink size={20} strokeWidth={2.5} className="hs-cta-icon" />
-                            </motion.a>
+                                <span style={{ opacity: 0.6 }}>Registration Closed</span>
+                            </motion.div>
                         </div>
 
                         {/* ── DIVIDER ── */}

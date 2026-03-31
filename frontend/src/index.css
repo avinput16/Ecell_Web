@@ -599,7 +599,7 @@ h4,
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem; /* Slightly tighter gap on mobile */
+  gap: 2rem; /* Increased gap for mobile */
 }
 
 /* ── Left block ── */
@@ -635,7 +635,7 @@ h4,
   font-family: 'Syne', sans-serif !important;
   font-weight: 900;
   /* fluid: reduced vw factor to prevent horizontal overlap on desktop */
-  font-size: clamp(1.8rem, 5.5vw, 4.2rem);
+  font-size: clamp(1.6rem, 5vw, 3.8rem); /* Slightly smaller max for mobile/tablet */
   line-height: 1;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -706,7 +706,7 @@ h4,
   justify-content: center;
   /* fixed width on mobile keeps it from stretching awkwardly */
   width: 100%;
-  padding: 1.75rem 2rem;
+  padding: 1.25rem 1.75rem; /* Tighter padding for mobile */
   background: rgba(0, 0, 0, 0.45);
   border-radius: 1.5rem;
   border: 1px solid rgba(188, 255, 47, 0.18);
@@ -730,7 +730,7 @@ h4,
   font-family: 'Syne', sans-serif;
   font-weight: 900;
   /* fluid: reduced min size for mobile */
-  font-size: clamp(2.2rem, 9vw, 4.5rem);
+  font-size: clamp(1.6rem, 8vw, 4rem); /* Capped max font-size for prize pool */
   line-height: 1;
   letter-spacing: -0.03em;
   color: #BCFF2F;
@@ -770,14 +770,19 @@ h4,
   /* Row layout */
   .hs-body {
     flex-direction: row;
-    align-items: flex-end; /* Changed from center to move contents lower */
+    align-items: center; /* Changed from flex-end to keep contents balanced */
     justify-content: space-between;
-    gap: 2.5rem;
+    gap: 3.5rem; /* Increased gap to prevent overlap */
   }
 
   .hs-left {
     align-items: flex-start;
     text-align: left;
+    max-width: 60%; /* Ensure left side doesn't squeeze the right side out */
+  }
+
+  .hs-title {
+    font-size: clamp(2rem, 3.5vw, 3.2rem); /* Reduced to prevent overflow/overlap */
   }
 
   /* Divider */
@@ -800,7 +805,7 @@ h4,
     width: auto;
     min-width: 260px;
     padding: 2.5rem 3rem;
-    margin-top: 1.5rem; /* Explicitly move it lower */
+    margin-top: 0; /* Removed margin-top to avoid overlap with CTA */
   }
 
   .hs-prize-label { font-size: 0.68rem; }
@@ -830,8 +835,12 @@ h4,
   .hs-body { gap: 3.5rem; }
 
   .hs-prize {
-    min-width: 300px;
-    padding: 3rem 4rem;
+    min-width: 280px; /* Tighter min-width */
+    padding: 2.5rem 3rem;
+  }
+
+  .hs-prize-amount {
+    font-size: clamp(2rem, 4vw, 3.5rem); /* Capped amount size on desktop */
   }
 }
 
