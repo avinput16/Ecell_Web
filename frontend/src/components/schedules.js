@@ -11,7 +11,7 @@ const scheduleData = [
     tagline: "The Grand Launch",
     accent: "#d4ff00",
     events: [
-      { name: "DP World Hackathon", time: "8:00 AM - 11:00 PM" },
+      { name: "DP World Hackathon", time: "12:00 PM - 12:00 AM" },
       { name: "Startup Expo", time: "8:00 AM - 7:00 PM", venue: "Library Lawns" },
       { name: "T3 Juniors", time: "12:00 PM - 3:00 PM", venue: "Audi Foyer" },
       { name: "Tech Gyan Workshop", time: "12:00 PM - 6:00 PM" },
@@ -24,7 +24,7 @@ const scheduleData = [
     tagline: "Pitch Perfect",
     accent: "#6b5fff",
     events: [
-      { name: "DP World Hackathon", time: "8:00 AM - 11:00 PM" },
+      { name: "DP World Hackathon", time: "12:00 AM - 10:00 AM" },
       { name: "Impactus", time: "10:00 AM - 6:00 PM" },
       { name: "PM Workshop", time: "11:00 AM - 3:00 PM" },
       { name: "Startup Expo", time: "8:00 AM - 7:00 PM", venue: "Library Lawns" },
@@ -47,7 +47,7 @@ const scheduleData = [
       { name: "Tech Gyan Workshop", time: "12:00 PM - 6:00 PM" },
       { name: "Teen Tycoons Sr.", time: "12:00 PM - 6:00 PM" },
       { name: "Corporate Networking Lunch", time: "12:00 PM - 3:00 PM", venue: "Audi Premises" },
-      { name: "DP World Finale", time: "12:00 PM - 5:00 PM" },
+      { name: "DP World Final Round", time: "10:00 AM - 6:30 PM" },
       { name: "Design Workshop", time: "TBA" },
       { name: "Defense Workshop", time: "TBA" },
     ]
