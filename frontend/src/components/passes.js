@@ -26,9 +26,9 @@ const PassCard = ({ title, price, perks, isPopular, icon: Icon, delay, position,
       viewport={{ once: true }}
       className={`relative glass p-8 rounded-[2.5rem] border-2 flex flex-col h-full transition-all duration-500 group ${getBorderGlowClass()} ${isPopular ? 'bg-ecell-primary/5' : ''}`}
     >
-      {isPopular && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-ecell-primary text-black text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_20px_rgba(212,255,0,0.4)]">
-          Most Popular
+      {(isSoldOut || isPopular) && (
+        <div className={`absolute -top-4 left-1/2 -translate-x-1/2 text-black text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg z-20 ${isSoldOut ? 'bg-red-500 shadow-red-500/40' : 'bg-ecell-primary shadow-[0_0_20px_rgba(212,255,0,0.4)]'}`}>
+          {isSoldOut ? 'Sold Out' : 'Most Popular'}
         </div>
       )}
 
