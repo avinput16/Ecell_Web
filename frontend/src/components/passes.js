@@ -8,7 +8,7 @@ import manishImg from "../assets/manish.jpeg";
 import SEO from "./common/SEO";
 
 
-const PassCard = ({ title, price, perks, isPopular, icon: Icon, delay, position, onGetStarted, id }) => {
+const PassCard = ({ title, price, perks, isPopular, icon: Icon, delay, position, onGetStarted, id, isSoldOut }) => {
   // Determine border glow color based on position
   const getBorderGlowClass = () => {
     if (position === 'center') {
@@ -64,13 +64,16 @@ const PassCard = ({ title, price, perks, isPopular, icon: Icon, delay, position,
       </div>
 
       <button
+        disabled={isSoldOut}
         onClick={onGetStarted}
-        className={`w-full py-4 rounded-xl font-bold text-center transition-all duration-300 transform font-manrope flex items-center justify-center gap-2 ${isPopular
-          ? 'bg-ecell-primary text-black hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]'
-          : 'bg-transparent text-ecell-primary border-2 border-ecell-primary hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(188,255,47,0.4)]'
+        className={`w-full py-4 rounded-xl font-bold text-center transition-all duration-300 transform font-manrope flex items-center justify-center gap-2 ${isSoldOut
+          ? 'bg-red-500/20 text-red-500 border-2 border-red-500/50 cursor-not-allowed'
+          : isPopular
+            ? 'bg-ecell-primary text-black hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]'
+            : 'bg-transparent text-ecell-primary border-2 border-ecell-primary hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(188,255,47,0.4)]'
           }`}
       >
-        Get Started <Rocket size={18} />
+        {isSoldOut ? 'Sold Out' : 'Get Started'} {!isSoldOut && <Rocket size={18} />}
       </button>
     </motion.div >
   );
@@ -142,6 +145,7 @@ const Passes = () => {
       price: "1399",
       icon: Star,
       delay: 0.3,
+      isSoldOut: true,
       position: 'right',
       paymentUrl: "https://konfhub.com/widget/launchpad-2026?desc=true&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=74243&ticketId=74243%7C1&screen=1",
       perks: [
@@ -328,7 +332,7 @@ const Passes = () => {
                 Coming in a group? Our Contingent Pass offers exclusive bulk benefits, discounted rates, and collective networking for college delegations.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">
-                {["Accommodation", "Dedicated Manager", "Group Workshops", "Team Certificates"].map((item) => (
+                {["Accommodation", "Dedicated Manager", "SEED", "Team Certificates"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-full bg-ecell-primary/10 flex items-center justify-center text-ecell-primary">
                       <Check size={14} />
