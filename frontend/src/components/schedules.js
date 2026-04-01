@@ -14,6 +14,7 @@ const scheduleData = [
       { name: "DP World Hackathon", time: "12:00 PM - 12:00 AM" },
       { name: "Startup Expo", time: "8:00 AM - 7:00 PM", venue: "Library Lawns" },
       { name: "T3 Juniors", time: "12:00 PM - 3:00 PM", venue: "Audi Foyer" },
+      { name: "Women Panel", time: "3:00 PM - 4:00 PM", venue: "F103", description: "Speakers: Shaily Mehrotra, Nidhi Saxena, Shantla Veigas" },
       { name: "Tech Gyan Workshop", time: "12:00 PM - 6:00 PM" },
     ]
   },
@@ -48,6 +49,7 @@ const scheduleData = [
       { name: "Teen Tycoons Sr.", time: "12:00 PM - 6:00 PM" },
       { name: "Corporate Networking Lunch", time: "12:00 PM - 3:00 PM", venue: "Audi Premises" },
       { name: "DP World Final Round", time: "10:00 AM - 6:30 PM" },
+      { name: "TVF Panel", time: "4:00 PM - 5:00 PM", venue: "Audi", description: "Speakers: Siddharth Nigam, Nidhi Bhanushali" },
       { name: "Design Workshop", time: "TBA" },
       { name: "Defense Workshop", time: "TBA" },
     ]
