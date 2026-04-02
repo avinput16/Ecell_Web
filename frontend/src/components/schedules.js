@@ -5,6 +5,22 @@ import { Clock, Zap, Star, MapPin } from "lucide-react";
 
 const scheduleData = [
   {
+    day: "00",
+    date: "2nd April",
+    label: "Day Zero",
+    accent: "#6b5fff",
+    events: [
+      { name: "Welcome and Introduction of Guest of Honour", time: "6:00 PM", venue: "Auditorium" },
+      { name: "Introduction of FOB", time: "6:10 PM", venue: "Auditorium" },
+      { name: "Lighting of the Lamp", time: "6:15 PM", venue: "Auditorium" },
+      { name: "FOB Address", time: "6:20 PM", venue: "Auditorium" },
+      { name: "Address by Dean", time: "6:25 PM", venue: "Auditorium" },
+      { name: "Address by FIC", time: "6:35 PM", venue: "Auditorium" },
+      { name: "Address by Chief Guest", time: "6:45 PM", venue: "Auditorium" },
+      { name: "Chairman's Address", time: "6:55 PM", venue: "Auditorium" },
+    ]
+  },
+  {
     day: "01",
     date: "3rd April",
     label: "Day One",
@@ -79,7 +95,7 @@ const EventSchedule = () => {
         <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-[#d4ff00]/10 rounded-full blur-[140px] animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Day Nav - Control Panel Style */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="space-y-4">
@@ -119,10 +135,10 @@ const EventSchedule = () => {
               animate={{ opacity: 1, y: 0, skewY: 0 }}
               exit={{ opacity: 0, y: -50, skewY: -2 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-12"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16"
             >
               {/* Left Column - Day Info */}
-              <div className="lg:col-span-4 space-y-12">
+              <div className="lg:col-span-5 space-y-12">
                 <div className="space-y-2">
                   <span
                     className="text-sm font-black uppercase tracking-widest transition-colors duration-1000"
@@ -130,7 +146,7 @@ const EventSchedule = () => {
                   >
                     {scheduleData[activeTab].date}
                   </span>
-                  <h3 className="text-3xl md:text-4xl font-black text-white/90">
+                  <h3 className="text-4xl md:text-5xl lg:text-7xl font-black text-white/90 leading-[0.9] tracking-tighter lg:max-w-sm">
                     {scheduleData[activeTab].tagline}
                   </h3>
                 </div>
@@ -155,7 +171,9 @@ const EventSchedule = () => {
                     </div>
                     <div className="absolute bottom-10 left-10 right-10 flex justify-between items-center">
                       <div className="flex gap-2">
-                        {[1, 2, 3].map(i => <div key={i} className={`w-3 h-1 rounded-full ${i - 1 === activeTab ? 'bg-[#d4ff00]' : 'bg-white/10'}`} />)}
+                        {scheduleData.map((_, i) => (
+                          <div key={i} className={`w-3 h-1 rounded-full ${i === activeTab ? 'bg-[#d4ff00]' : 'bg-white/10'}`} />
+                        ))}
                       </div>
                       <Star className="text-white/20" />
                     </div>
@@ -164,7 +182,7 @@ const EventSchedule = () => {
               </div>
 
               {/* Right Column - Timeline */}
-              <div className="lg:col-span-8">
+              <div className="lg:col-span-7">
                 <div className="space-y-4">
                   {scheduleData[activeTab].events.map((event, idx) => (
                     <motion.div
