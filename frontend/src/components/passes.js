@@ -222,6 +222,9 @@ const Passes = () => {
             id="internship-drive-pass"
             className="glass p-8 md:p-10 rounded-[2.5rem] border border-ecell-primary/20 relative overflow-hidden group flex flex-col items-center"
           >
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-500 text-black text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg shadow-red-500/40 z-20">
+              Sold Out
+            </div>
             <div className="absolute top-0 right-0 p-8 opacity-5 -rotate-12 group-hover:rotate-0 transition-transform duration-700">
               <Briefcase size={120} className="text-ecell-primary" />
             </div>
@@ -248,13 +251,10 @@ const Passes = () => {
               <div className="flex flex-col items-center gap-4 mt-auto">
                 <div className="text-3xl font-bold text-white font-manrope">₹349</div>
                 <button
-                  onClick={() => handleGetStarted({
-                    title: "Internship Drive",
-                    paymentUrl: "https://konfhub.com/widget/launchpad-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Nunito&borderRadius=10&widget_type=standard&tickets=80695&ticketId=80695%7C1"
-                  })}
-                  className="px-8 py-3.5 rounded-xl bg-ecell-primary text-black font-bold text-center hover:scale-105 transition-all duration-300 transform font-manrope inline-flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(212,255,0,0.5)]"
+                  disabled
+                  className="px-12 py-3.5 rounded-xl bg-red-500/20 text-red-500 border border-red-500/50 font-bold text-center cursor-not-allowed transform font-manrope inline-flex items-center justify-center gap-2"
                 >
-                  Get Started <Rocket size={18} />
+                  Sold Out
                 </button>
               </div>
             </div>
