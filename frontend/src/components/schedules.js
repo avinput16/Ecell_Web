@@ -40,7 +40,7 @@ const scheduleData = [
       { name: "T3 Juniors", time: "12:00 PM - 3:00 PM", venue: "AUDI FOYER" },
       { name: "SEED", time: "1:00 PM - 3:00 PM", venue: "G204", description: "Summit for Entrepreneurial Ecosystem Development" },
       { name: "Defence Panel", time: "12:00 PM - 2:00 PM", venue: "F103" },
-      { name: "Women Panel", time: "3:00 PM - 4:00 PM", venue: "F103", description: "Speakers: Shaily Mehrotra, Nidhi Saxena, Shantla Veigas" },
+      { name: "Creating Value Through Innovation, Storytelling, and Social Impact: Women Panel", time: "3:00 PM - 4:00 PM", venue: "F103", description: "Panelists: Ms. Shaily Mehrotra (CEO & Founder, FixDerma and judge at Shark Tank Season 5), Ms. Nidhi Saxena (Founder of Delulu), Ms. Shanthala Veigas (Senior Director-TiE Hyderabad)" },
       { name: "Risk Management", time: "11:00 AM - 5:00 PM", venue: "F107" },
       { name: "Pokemon Showdown", time: "3:00 PM - 7:00 PM", venue: "G108" },
       { name: "Tech Gyan Workshop", time: "12:00 PM - 6:00 PM", venue: "F106, F109" },
@@ -86,6 +86,7 @@ const scheduleData = [
       { name: "SEED", time: "12:00 PM - 2:30 PM", venue: "G204" },
       { name: "Risk Management", time: "9:00 AM - 6:30 PM", venue: "G107" },
       { name: "I3 Parents", time: "9:00 AM - 5:00 PM", venue: "F203" },
+      { name: "Creating Value Through Innovation, Storytelling, and Social Impact: Women Panel", time: "3:00 PM - 4:00 PM", venue: "F103", description: "Panelists: Ms. Shaily Mehrotra (CEO & Founder, FixDerma and judge at Shark Tank Season 5), Ms. Nidhi Saxena (Founder of Delulu), Ms. Shanthala Veigas (Senior Director-TiE Hyderabad)" },
       { name: "TVF Panel", time: "4:00 PM - 5:00 PM", venue: "Audi", description: "Speakers: Siddharth Nigam, Nidhi Bhanushali" },
       { name: "Tech Gyan Workshop", time: "9:00 AM - 4:30 PM" },
     ]
