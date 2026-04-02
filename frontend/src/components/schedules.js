@@ -8,6 +8,7 @@ const scheduleData = [
     day: "00",
     date: "2nd April",
     label: "Day Zero",
+    tagline: "The Grand Beginning",
     accent: "#6b5fff",
     events: [
       { name: "Welcome and Introduction of Guest of Honour", time: "6:00 PM", venue: "Auditorium" },
@@ -18,6 +19,13 @@ const scheduleData = [
       { name: "Address by FIC", time: "6:35 PM", venue: "Auditorium" },
       { name: "Address by Chief Guest", time: "6:45 PM", venue: "Auditorium" },
       { name: "Chairman's Address", time: "6:55 PM", venue: "Auditorium" },
+      { name: "Versatality", time: "7:30 PM", venue: "Auditorium" },
+      { name: "Fashion Club", time: "7:40 PM", venue: "Auditorium" },
+      { name: "Hindi Tarang", time: "7:55 PM", venue: "Auditorium" },
+      { name: "Movie Club", time: "8:05 PM", venue: "Auditorium" },
+      { name: "Dramatics Club", time: "8:20 PM", venue: "Auditorium" },
+      { name: "Comedy Club", time: "8:55 PM", venue: "Auditorium" },
+      { name: "Sejal Kumar Performance", time: "9:30 PM", venue: "Auditorium" },
     ]
   },
   {
