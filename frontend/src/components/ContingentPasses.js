@@ -35,9 +35,13 @@ const PassCard = ({ title, price, perks, commonPerks, isPopular, icon: Icon, del
             <div className="space-y-4 mb-4 flex-grow">
                 {perks.map((perk, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                        <div className={`mt-1 shrink-0 ${perk.included ? 'text-ecell-primary' : 'text-red-500'}`}>
-                            {perk.included ? <Check size={18} /> : <X size={18} />}
-                        </div>
+                        {perk.hideIcon ? (
+                             <div className="mt-1 shrink-0 w-[18px]" />
+                         ) : (
+                             <div className={`mt-1 shrink-0 ${perk.included ? 'text-ecell-primary' : 'text-red-500'}`}>
+                                 {perk.included ? <Check size={18} /> : <X size={18} />}
+                             </div>
+                         )}
                         <div className="flex flex-col">
                             <span className={`text-sm font-manrope font-bold ${perk.included ? 'text-ecell-primary' : 'text-red-500/80'}`}>
                                 {perk.text}
@@ -75,9 +79,13 @@ const PassCard = ({ title, price, perks, commonPerks, isPopular, icon: Icon, del
                                     <div className="pt-2 space-y-4 pb-2">
                                         {commonPerks.items.map((perk, idx) => (
                                             <div key={idx} className="flex items-start gap-3">
-                                                <div className={`mt-1 shrink-0 ${perk.included ? 'text-ecell-primary' : 'text-red-500'}`}>
-                                                    {perk.included ? <Check size={18} /> : <X size={18} />}
-                                                </div>
+                                                {perk.hideIcon ? (
+                                                     <div className="mt-1 shrink-0 w-[18px]" />
+                                                 ) : (
+                                                     <div className={`mt-1 shrink-0 ${perk.included ? 'text-ecell-primary' : 'text-red-500'}`}>
+                                                         {perk.included ? <Check size={18} /> : <X size={18} />}
+                                                     </div>
+                                                 )}
                                                 <div className="flex flex-col">
                                                     <span className={`text-sm font-manrope font-bold ${perk.included ? 'text-ecell-primary' : 'text-red-500/80'}`}>
                                                         {perk.text}
@@ -141,7 +149,7 @@ const ContingentPasses = () => {
                     { text: "Startup Expo Access", subtext: "Explore live startups & innovations", included: true },
                     { text: "Competition Viewing Access", subtext: "Pitchers Pilot · Ground Reality · Teen Tycoons", included: true },
                     { text: "Speaker Sessions Access", subtext: "Talks by founders & industry leaders", included: true },
-                    { text: "Internship Drive Access", subtext: "Tap into internship opportunities", included: true },
+                    { text: "Internship Drive Access", subtext: "SOLD OUT", included: false, hideIcon: true },
                     { text: "E-Cell In-House Workshops", subtext: "Hands-on learning sessions", included: true },
                     { text: "Highlight Speaker Session Access", subtext: "Flagship Talks by Founders & Industry Leaders", included: true },
 
@@ -171,7 +179,7 @@ const ContingentPasses = () => {
                     { text: "Startup Expo Access", subtext: "Explore live startups & innovations", included: true },
                     { text: "Competition Viewing Access", subtext: "Pitchers Pilot · Ground Reality · Teen Tycoons", included: true },
                     { text: "Speaker Sessions Access", subtext: "Talks by founders & industry leaders", included: true },
-                    { text: "Internship Drive Access", subtext: "Tap into internship opportunities", included: true },
+                    { text: "Internship Drive Access", subtext: "SOLD OUT", included: false, hideIcon: true },
                     { text: "E-Cell In-House Workshops", subtext: "Hands-on learning sessions", included: true },
                     { text: "Highlight Speaker Session Access", subtext: "Flagship Talks by Founders & Industry Leaders", included: true },
 
