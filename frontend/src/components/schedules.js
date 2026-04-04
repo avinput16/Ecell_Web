@@ -80,7 +80,7 @@ const scheduleData = [
       { name: "DP World Finale", time: "10:00 AM - 6:30 PM", venue: "G102-G103" },
       { name: "Startup Expo", time: "9:00 AM - 11:00 PM", venue: "Library Lawns" },
       { name: "Internship Drive", time: "9:00 AM - 6:30 PM", venue: "F201, F202" },
-      { name: "GR Finals", time: "12:00 PM - 6:00 PM", venue: "F104" },
+      { name: "GR Finals", time: "10:00 AM - 5:00 PM", venue: "F104" },
       { name: "Teen Tycoons", time: "9:00 AM - 5:00 PM", venue: "F204-F208" },
       { name: "AI Tech Panel", time: "1:00 PM - 3:00 PM", venue: "F103" },
       { name: "Design Workshop", time: "10:00 AM - 2:30 PM", venue: "F102" },
