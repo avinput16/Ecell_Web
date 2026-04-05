@@ -77,19 +77,20 @@ const scheduleData = [
     tagline: "Moment Of Glory",
     accent: "#d4ff00",
     events: [
-      { name: "TechGyan Workshop", time: "9:00 AM", venue: "F102, F106, G104, G105, G106" },
+      { name: "TechGyan Workshop", time: "9:00 AM", venue: "F102, F106, F109, G104, G105, G106" },
       { name: "Internship Drive", time: "9:00 AM", venue: "F201, F202" },
       { name: "Teen Tycoons", time: "9:00 AM", venue: "F204, F205, F207, F208" },
       { name: "Startup Expo", time: "9:00 AM", venue: "Library Lawns" },
       { name: "Ground Reality Finals", time: "10:00 AM", venue: "F105" },
       { name: "Corporate Crusades", time: "10:00 AM", venue: "F107, F108" },
-      { name: "SEED Day-3", time: "11:00 AM", venue: "G204/B", description: "Summit for Entrepreneurial Ecosystem Development" },
+      { name: "SEED Day-3", time: "11:00 AM", venue: "G204A", description: "Summit for Entrepreneurial Ecosystem Development" },
       { name: "Designing Workshop", time: "11:00 AM", venue: "F103" },
-      { name: "DP World Hackathon Finale", time: "12:00 PM", venue: "F101, G102, G103" },
+      { name: "DP World Hackathon Finale", time: "12:00 PM", venue: "F101" },
       { name: "AI/Tech Panel Session", time: "12:00 PM", venue: "F104" },
-      { name: "Corporate Networking Lunch", time: "3:00 PM", venue: "F103" },
-      { name: "Entrepreneurship Workshop", time: "3:00 PM", venue: "F103" },
+      { name: "Corporate Networking Lunch", time: "3:00 PM", venue: "Auditorium Upper Floor" },
+      { name: "Entrepreneurship and Design Thinking Workshop", time: "3:00 PM", venue: "F103" },
       { name: "Speaker Session - TVF", time: "4:00 PM", venue: "Auditorium", description: "Speakers: Siddharth Nigam, Nidhi Bhanushali" },
+      { name: "Closing Ceremony", time: "5:30 PM", venue: "F104", description: "Guest: Dr. Jayaprakash Narayan, IAS" },
     ]
   }
 ];
