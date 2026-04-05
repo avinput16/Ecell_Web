@@ -96,7 +96,7 @@ const scheduleData = [
 ];
 
 const EventSchedule = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(3);
 
   return (
     <div className="min-h-screen bg-black text-white py-12 md:py-24 px-4 md:px-12 relative overflow-hidden font-syne">
