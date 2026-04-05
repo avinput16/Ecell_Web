@@ -99,7 +99,7 @@ const EventSchedule = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="min-h-screen bg-black text-white py-24 px-6 md:px-12 relative overflow-hidden font-syne">
+    <div className="min-h-screen bg-black text-white py-12 md:py-24 px-4 md:px-12 relative overflow-hidden font-syne">
       {/* Mesh Gradients Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-30">
         <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-[#6b5fff]/20 rounded-full blur-[160px] animate-pulse" />
@@ -108,20 +108,20 @@ const EventSchedule = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Day Nav - Control Panel Style */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-20 gap-8">
           <div className="space-y-4">
             <span className="text-[#d4ff00] font-black uppercase tracking-[0.3em] text-sm">Launchpad Schedule</span>
-            <h2 className="text-6xl md:text-8xl font-black italic uppercase leading-none tracking-tighter">
+            <h2 className="text-4xl md:text-8xl font-black italic uppercase leading-none tracking-tighter shrink-0 mb-4 md:mb-0">
               {scheduleData[activeTab].label}<span className="text-[#d4ff00]">.</span>
             </h2>
           </div>
 
-          <div className="flex bg-white/5 p-1.5 rounded-full border border-white/10 backdrop-blur-3xl shadow-2xl">
+          <div className="flex bg-neutral-900/50 p-1 rounded-full border border-white/5 backdrop-blur-3xl shadow-2xl overflow-x-auto no-scrollbar w-fit max-w-full">
             {scheduleData.map((day, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveTab(idx)}
-                className={`px-8 py-3 rounded-full transition-all duration-700 relative flex items-center gap-2 group ${activeTab === idx ? "text-black" : "text-white/40 hover:text-white"
+                className={`px-4 md:px-8 py-2.5 md:py-3 rounded-full transition-all duration-700 relative flex items-center gap-2 group shrink-0 ${activeTab === idx ? "text-black" : "text-white/40 hover:text-white"
                   }`}
               >
                 {activeTab === idx && (
@@ -131,14 +131,14 @@ const EventSchedule = () => {
                     transition={{ type: "spring", bounce: 0.15, duration: 0.6 }}
                   />
                 )}
-                <span className="relative z-10 font-black text-sm uppercase">Day {day.day}</span>
+                <span className="relative z-10 font-bold text-xs md:text-sm uppercase tracking-wider whitespace-nowrap">Day {day.day}</span>
               </button>
             ))}
           </div>
         </div>
 
         {/* Content Box */}
-        <div className="relative border-t border-white/10 pt-12">
+        <div className="relative border-t border-white/10 pt-8 md:pt-12">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -157,7 +157,7 @@ const EventSchedule = () => {
                   >
                     {scheduleData[activeTab].date}
                   </span>
-                  <h3 className="text-4xl md:text-5xl lg:text-7xl font-black text-white/90 leading-[0.9] tracking-tighter lg:max-w-sm">
+                  <h3 className="text-3xl md:text-5xl lg:text-7xl font-black text-white/90 leading-[0.9] tracking-tighter lg:max-w-sm">
                     {scheduleData[activeTab].tagline}
                   </h3>
                 </div>
@@ -201,7 +201,7 @@ const EventSchedule = () => {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.08 }}
-                      className="group flex flex-col md:flex-row md:items-center justify-between p-6 md:p-10 bg-white/5 border border-white/5 rounded-[2.5rem] hover:bg-white/[0.08] hover:border-[#d4ff00]/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] transition-all duration-500 relative"
+                      className="group flex flex-col md:flex-row md:items-center justify-between p-5 md:p-10 bg-white/5 border border-white/5 rounded-[2rem] md:rounded-[2.5rem] hover:bg-white/[0.08] hover:border-[#d4ff00]/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] transition-all duration-500 relative"
                     >
                       {/* Horizontal Dash line */}
                       <div className="hidden md:block absolute left-[-48px] top-1/2 w-12 h-px bg-white/10 group-hover:bg-[#d4ff00]/30 transition-colors" />
@@ -250,13 +250,13 @@ const EventSchedule = () => {
         <div className="mt-16 flex flex-col md:flex-row justify-center items-center gap-6 relative z-10">
           <Link
             to="/launchpad/passes"
-            className="px-10 py-4 bg-[#d4ff00] text-black font-black uppercase tracking-widest text-sm rounded-full hover:bg-white transition-all duration-300 shadow-[0_0_30px_rgba(212,255,0,0.3)] hover:scale-105"
+            className="w-full md:w-auto text-center px-6 md:px-10 py-4 bg-[#d4ff00] text-black font-black uppercase tracking-widest text-sm rounded-full hover:bg-white transition-all duration-300 shadow-[0_0_30px_rgba(212,255,0,0.3)] hover:scale-105"
           >
             Get Your Passes
           </Link>
           <Link
             to="/launchpad/accommodation"
-            className="px-10 py-4 bg-white/10 border border-white/20 text-white font-bold uppercase tracking-widest text-sm rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-105"
+            className="w-full md:w-auto text-center px-6 md:px-10 py-4 bg-white/10 border border-white/20 text-white font-bold uppercase tracking-widest text-sm rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-105"
           >
             Accommodation Details
           </Link>
