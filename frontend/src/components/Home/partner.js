@@ -22,8 +22,10 @@ import img20 from '../../assets/spons/yourstartupol.jpeg';
 import img21 from '../../assets/spons/cosmos.png';
 import img22 from '../../assets/spons/nirmaan.png';
 import img23 from '../../assets/spons/ecell.jpeg';
+import img24 from '../../assets/spons/thristypelican.jpeg';
 
 const items = [
+  { name: "Thirsty Pelican", image: img24 },
   { name: "Innovation", image: img1 },
   { name: "Technology", image: img2 },
   { name: "Future", image: img3 },
